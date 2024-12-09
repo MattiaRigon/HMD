@@ -29,7 +29,6 @@ def extract_json_from_text(content):
         return {}
     else:
         return json_objects[0]
-    return json_objects
 
 def query_model(model_name: str, system_prompt: str ,user_prompt: str) -> str:
     """Query the Ollama model and return the response."""
