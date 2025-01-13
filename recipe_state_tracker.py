@@ -105,6 +105,9 @@ class RecipeStateTracker:
                 state_dict[intent] = self.intents[intent].to_dict()
         return state_dict
 
+    def get_slots(self, intent):
+        return self.slots[intent]
+
     def to_string(self):
         return json.dumps(self.to_dict(), indent=4)
     

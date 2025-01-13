@@ -115,6 +115,15 @@ def get_ingredients_by_meal(name: str):
         ingredients.extend(meal.ingredients.split("##"))
     return list(set(ingredients))
 
+def filter_recipes(nationality: Optional[str] = None, category: Optional[str] = None, ingredients: Optional[List[str]] = None):
+    results = []
+    for meal in get_all_meals():
+        if (nationality is None or meal.strArea.lower() == nationality.lower()) and \
+            (category is None or meal.strCategory.lower() == category.lower()) and \
+            (ingredients is None or all(ingredient in meal.ingredients.split("##") for ingredient in ingredients)):
+            results.append(meal.strMeal)
+    return results
+
 def get_all_areas():
     return list(set(meal.strArea for meal in get_all_meals() if meal.strArea))
 
@@ -132,6 +141,8 @@ def get_meals_by_ingredients(ingredients: List[str]):
         if all(ingredient in meal_ingredients for ingredient in ingredients):
             results.append(meal.strMeal)
     return results
+
+
 
 def get_all_categories():
     return list(set(meal.strCategory for meal in get_all_meals() if meal.strCategory))

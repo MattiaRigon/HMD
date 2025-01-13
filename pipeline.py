@@ -5,8 +5,7 @@ import torch
 from utils_cluster import load_model, generate, MODELS, TEMPLATES, PROMPTS
 import json
 import re
-from HMD.data.legacy_database import *
-
+from data.database import filter_recipes, get_meals_by_ingredients
 
 def extract_json_from_text(content):
 
@@ -92,8 +91,9 @@ def main():
         print(f"NLU: {nlu_output}")
         st.update(nlu_output)
         print(f"State: {st.to_string()}")
-        # Optional Pre-Processing for DM
-        nlu_output = nlu_output.strip()
+        recipe_recommendation_slots = st.get_slots("recipe_recommendation")
+        meals = filter_recipes(recipe_recommendation_slots["nationality"], recipe_recommendation_slots["category"], recipe_recommendation_slots["ingredients"])
+        print(f"Meals: {meals}")
 
         # get the DM output
         dm_text = args.chat_template.format(PROMPTS["DM"], st.to_string())
@@ -104,13 +104,12 @@ def main():
 
         if "action" in dm_output:
             if dm_output["action"] == "confirmation_{recipe_raccomendation}" or dm_output["action"] == "confirmation_recipe_raccomendation":
-                meals = get_meals_by_ingridients(dm_output["slots"]["ingredients"])
+                meals = get_meals_by_ingredients(dm_output["slots"]["ingredients"])
                 print(f"Meals: {meals}")
 
         # Optional Pre-Processing for NLG
         nlg_input = {"dm": dm_output, "nlu": st.to_dict()}
         nlg_input = json.dumps(nlg_input, indent=4)
-
 
         # get the NLG output
         nlg_text = args.chat_template.format(PROMPTS["NLG"], nlg_input)

@@ -17,40 +17,51 @@ MODELS = {
 
 TEMPLATES = {
     "llama2": "<s>[INST] <<SYS>>\n{}\n<</SYS>>\n\n{} [/INST]",
+    "llama3": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
+
 }
 
 PROMPTS = {
-    "NLU": """Identify the user intent from this list:
-[pizza_ordering, pizza_delivery, drink_ordering, out_of_domain].
-If the intent is pizza_ordering, extract the following slot values from the user input
-- pizza_size, the size of the pizza
-- pizza_type, the type of pizza
-- pizza_count, the number of pizzas.
-If no values are present in the user input you have to put null as the value.
-Output them in a json format.
-Only output the json file.
+
+    "NLU_INTENT": """You are a natural language understanding module of a recipe bot that has to extract the intent of the user input.:
+    1) Extract intent and classify it between [recipe_recommendation,recipe_summarization,insert_recipe,other]
+    recipe_recommendation: the user is searching for a recipe, the user has give you some information such as ingredients, or nationality, or dish type, or cooking time, or meal type.
+    recipe_summarization: the user is asking for information about a recipe, the user has give you the name of the recipe and a question. Like how to continue the recipe, or how much time it takes to cook.
+    """,
+    "NLU":""""
+    You are a natural language understanding module of a recipe bot, that has to extract slots and sentiment of the user input.
+    1) Extract slot values, the slot values change based on the intent. :
+    For the intent recipe_recommendation slots are:
+        nationality (like italian, tunisian, spanish)
+        category (like pasta, meat, fish)
+        ingredients ( a list of ingedients divided by comma, like : tomato, onion, garlic)
+    For the intent recipe_summarization slots are:
+        recipe_name
+        question
+If there are not values for a slot put null as value.
+3) Extract sentiment
+4) Return a JSON with keys intent, slots dict, sentiment type.
+Only output the json file. 
+EXTRACT ONLY THE SLOTS VALUE THAT USER HAS WRITTEN, DON'T ADD OTHER WORDS NOT PRESENT IN THE USER INPUT.
 The json format is:
-{
-    "intent": "intent_value",
-    "slots": {
-        "slot1": "value1",
-        "slot2": "value2",
-        "slot3": "value3"
-    }
-}""",
+""",
 
-    "DM": """You are the Dialogue Manager.
-Given the output of the NLU component, you should only generate the next best action from this list:
-- request_info(slot), if a slot value is missing (null) by substituting slot with the missing slot name
-- confirmation(intent), if all slots have been filled""",
+    "DM": """You are a dialogue manager of a recipe bot, that have to extract the action_required field.
+ You will have in input a json with keys intent, slots and sentiment.
+ Intent and sentiment are strings or null, while slots is another dictionary with slots.
+ You have to detect if there are null values, when you find the first null values you have to fill the action_required field with the name of the string req_info_{slot_name} where slot name is the null slot.
+If there are multiple null, just place the first one, and if there are no null values put confirmation_{intent}.
+I want that you return a json with just one field, the action_required, filled with the information that I have gived with you.
+""",
 
-    "NLG": """You are the NLG component: you must be very polite.
-Given the next best action classified by the Dialogue Manager (DM),
-you should only generate a lexicalized response for the user.
-Possible next best actions are:
-- request_info(slot): generate an appropriate question to ask the user for the missing slot value
-- confirmation(intent): generate an appropriate confirmation message for the user intent"""
+    "NLG": """You are a natural language generation module in a recipe bot, given the action that you have to performe in input you have to generate the correct question for the user.
+You will get as input a json with 2 objects input the NLU dictionary and the DM dictionary.
+In the NLU object you will have all the information about intent and slots of the users.
+While in the DM you will have the action required and possible other informations.
+ Please you have to answer with the correct question for the user.
+ REPLY JUST WITH THE QUESTION FOR THE USER."""
 }
+
 
 
 def load_model(args: Namespace) -> Tuple[PreTrainedModel, PreTrainedTokenizer]:
