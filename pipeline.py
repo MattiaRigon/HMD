@@ -5,7 +5,7 @@ import torch
 from utils_cluster import load_model, generate, MODELS, TEMPLATES, PROMPTS
 import json
 import re
-from data.database import *
+from HMD.data.legacy_database import *
 
 
 def extract_json_from_text(content):
@@ -103,7 +103,7 @@ def main():
         print(f"DM: {dm_output}")
 
         if "action" in dm_output:
-            if dm_output["action"] == "confirmation_{recipe_search}" or dm_output["action"] == "confirmation_recipe_search":
+            if dm_output["action"] == "confirmation_{recipe_raccomendation}" or dm_output["action"] == "confirmation_recipe_raccomendation":
                 meals = get_meals_by_ingridients(dm_output["slots"]["ingredients"])
                 print(f"Meals: {meals}")
 

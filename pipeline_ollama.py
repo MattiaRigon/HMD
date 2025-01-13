@@ -2,7 +2,7 @@ import argparse
 from argparse import Namespace
 from recipe_state_tracker import RecipeStateTracker
 from utils import TEMPLATES, PROMPTS
-from ollama import chat
+from ollama import chat, generate
 from ollama import ChatResponse
 import json
 import re
@@ -67,9 +67,9 @@ def main():
             print(f"DM: {dm_output}")
 
             if "action" in dm_output:
-                if dm_output["action"] == "confirmation_{recipe_search}" or dm_output["action"] == "confirmation_recipe_search":
-                    meals = get_meals_by_ingridients(dm_output["slots"]["ingredients"])
-                    print(f"Meals: {meals}")
+                if nlu_output["intent"] == "recipe_raccomendation":
+                    recipes = get_recipes(st.to_dict()["recipe_raccomendation"])
+                    print(f"Recipes: {recipes}")
 
             nlg_input = {"dm": dm_output, "nlu": st.to_dict()}
             nlg_input = json.dumps(nlg_input, indent=4)

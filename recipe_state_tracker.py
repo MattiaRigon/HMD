@@ -1,7 +1,6 @@
 import json
+from data.database import get_all_categories, get_all_ingredients, get_all_areas
 from rule import *
-from data.database import *
-
 
 class Intent:
     def __init__(self):
@@ -47,9 +46,9 @@ class RecipeStateTracker:
     def __init__(self):
         self.selected_recipe = None
         self.intents: dict[str, Intent] = {
-            "recipe_search": RecipeSearch(),
-            "recipe_information": RecipeInformation(),
-            "insert_recipe": InsertRecipe()
+            "recipe_recommendation": RecipeRaccomandation(),
+            "recipe_summarization": RecipeSummariazation(),
+            # "insert_recipe": InsertRecipe()
         }   
         
         self.slots = {}
@@ -109,39 +108,38 @@ class RecipeStateTracker:
     def to_string(self):
         return json.dumps(self.to_dict(), indent=4)
     
-class RecipeSearch(Intent):
+class RecipeRaccomandation(Intent):
     def __init__(self):
         super().__init__()
-        self.intent = "recipe_search"
+        self.intent = "recipe_recommendation"
         self.slots = {
             "nationality": None,
-            # "dish_type": None,
+            "category": None,
             "ingredients": None,
-            "cooking_time": None,
-            "meal_type": None,
-            "skip_other_slots": False
+            # "meal_type": None
         }
 
-        all_ingredients = get_all_ingridients()
+        all_ingredients = get_all_ingredients()
         all_ingredients = [ing.lower() for ing in all_ingredients if ing]
 
-        all_areas = get_all_area()
+        all_areas = get_all_areas()
         all_areas = [area.lower() for area in all_areas if area]
+
+        all_categories = get_all_categories()
+        all_categories = [category.lower() for category in all_categories]
 
         self.values_allowed_slots = {
             
             "nationality": InListRule(all_areas),
-            # "dish_type": InListRule(["pasta", "meat", "fish"]),
             "ingredients": InListRule(all_ingredients),
-            "cooking_time": IsIntegerRule(),
-            "meal_type": InListRule(["breakfast","lunch", "dinner"]),
-            "skip_other_slots": InListRule(["true", "false"])
+            "category": InListRule(all_categories),
+            # "meal_type": InListRule(["breakfast","lunch", "dinner"])
         }
 
-class RecipeInformation(Intent):
+class RecipeSummariazation(Intent):
     def __init__(self):
         super().__init__()
-        self.intent = "recipe_information"
+        self.intent = "recipe_summarization"
         self.slots = {
             "recipe_name": None,
             "question": None
