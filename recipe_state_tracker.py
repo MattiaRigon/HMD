@@ -47,7 +47,10 @@ class RecipeStateTracker:
         self.selected_recipe = None
         self.intents: dict[str, Intent] = {
             "recipe_recommendation": RecipeRaccomandation(),
-            "recipe_information": RecipeInformation(),
+            "ask_for_ingredients": AskForIngredients(),
+            "ask_for_procedure": AskForProcedure(),
+            "ask_for_time": AskForTime(),
+            "not_supported": Intent(),
             # "insert_recipe": InsertRecipe()
         }   
         
@@ -140,17 +143,44 @@ class RecipeRaccomandation(Intent):
             # "meal_type": InListRule(["breakfast","lunch", "dinner"])
         }
 
-class RecipeInformation(Intent):
+class AskForIngredients(Intent):
     def __init__(self):
         super().__init__()
-        self.intent = "recipe_information"
+        self.intent = "ask_for_ingredients"
         self.slots = {
             "recipe_name": None,
-            "request": None
         }
         self.values_allowed_slots = {
             "recipe_name": IsStringRule(),
-            "request": IsStringRule()
+        }
+
+class NotSupported(Intent):
+    def __init__(self):
+        super().__init__()
+        self.intent = "not_supported"
+        self.slots = {}
+        self.values_allowed_slots = {}
+
+class AskForProcedure(Intent):
+    def __init__(self):
+        super().__init__()
+        self.intent = "ask_for_procedure"
+        self.slots = {
+            "recipe_name": None,
+        }
+        self.values_allowed_slots = {
+            "recipe_name": IsStringRule(),
+        }
+
+class AskForTime(Intent):
+    def __init__(self):
+        super().__init__()
+        self.intent = "ask_for_time"
+        self.slots = {
+            "recipe_name": None,
+        }
+        self.values_allowed_slots = {
+            "recipe_name": IsStringRule(),
         }
 
 class InsertRecipe(Intent):
