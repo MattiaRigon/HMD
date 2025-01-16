@@ -47,7 +47,7 @@ class RecipeStateTracker:
         self.selected_recipe = None
         self.intents: dict[str, Intent] = {
             "recipe_recommendation": RecipeRaccomandation(),
-            "recipe_summarization": RecipeSummariazation(),
+            "recipe_information": RecipeInformation(),
             # "insert_recipe": InsertRecipe()
         }   
         
@@ -96,7 +96,8 @@ class RecipeStateTracker:
                     else:
                         print(f"Invalid value for slot {slot}: {value}")
             else:
-                print(f"Invalid slot: {slot}")
+                # print(f"Invalid slot: {slot}")
+                pass
 
     def to_dict(self):
         state_dict = {}
@@ -139,17 +140,17 @@ class RecipeRaccomandation(Intent):
             # "meal_type": InListRule(["breakfast","lunch", "dinner"])
         }
 
-class RecipeSummariazation(Intent):
+class RecipeInformation(Intent):
     def __init__(self):
         super().__init__()
-        self.intent = "recipe_summarization"
+        self.intent = "recipe_information"
         self.slots = {
             "recipe_name": None,
-            "question": None
+            "request": None
         }
         self.values_allowed_slots = {
             "recipe_name": IsStringRule(),
-            "question": IsStringRule()
+            "request": IsStringRule()
         }
 
 class InsertRecipe(Intent):

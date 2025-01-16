@@ -70,7 +70,7 @@ def fetch_meals():
         except TypeError as e:
             print(f"Error creating Meal: {e}")
 
-        if len(meals) >= 10:  # Limit to 10 meals for demonstration
+        if len(meals) >= 100:  # Limit to 10 meals for demonstration
             break
 
     return meals
@@ -97,10 +97,10 @@ def get_all_meals():
         return [Meal.from_dict(meal) for meal in db_data]
 
 def get_meal_by_name(name: str):
-    return [meal for meal in get_all_meals() if name.lower() in meal.strMeal.lower()]
+    return [meal.to_dict() for meal in get_all_meals() if name.lower() in meal.strMeal.lower()]
 
 def get_meals_by_category(category: str):
-    return [meal for meal in get_all_meals() if meal.strCategory == category]
+    return [meal.to_dict() for meal in get_all_meals() if meal.strCategory == category]
 
 def get_all_ingredients():
     ingredients = []
@@ -117,10 +117,13 @@ def get_ingredients_by_meal(name: str):
 
 def filter_recipes(nationality: Optional[str] = None, category: Optional[str] = None, ingredients: Optional[List[str]] = None):
     results = []
+    if isinstance(ingredients,str):
+        ingredients = ingredients.split(",")
+        ingredients = [ing.replace(" ","").lower() for ing in ingredients]
     for meal in get_all_meals():
         if (nationality is None or meal.strArea.lower() == nationality.lower()) and \
             (category is None or meal.strCategory.lower() == category.lower()) and \
-            (ingredients is None or all(ingredient in meal.ingredients.split("##") for ingredient in ingredients)):
+            (ingredients is None or all(ingredient in meal.ingredients.lower().split("##") for ingredient in ingredients)):
             results.append(meal.strMeal)
     return results
 

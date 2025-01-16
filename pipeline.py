@@ -5,7 +5,7 @@ import torch
 from utils_cluster import load_model, generate, MODELS, TEMPLATES, PROMPTS
 import json
 import re
-from data.database import filter_recipes, get_meals_by_ingredients
+from data.database import filter_recipes, get_meal_by_name, get_meals_by_ingredients
 
 def extract_json_from_text(content):
 
@@ -23,7 +23,7 @@ def extract_json_from_text(content):
             json_obj = json.loads(match)
             json_objects.append(json_obj)
         except json.JSONDecodeError:
-            print(f"Invalid JSON detected and skipped: {match[:30]}...")
+            print(f"Invalid JSON detected and skipped: {match}...")
     if len(json_objects) == 0:
         return {}
     else:
@@ -63,7 +63,7 @@ def get_args() -> Namespace:
     parser.add_argument(
         "--max-new-tokens",
         type=int,
-        default=128,
+        default=1000,
         help="The maximum sequence length to use for the model.",
     )
 
@@ -79,44 +79,70 @@ def main():
     st = RecipeStateTracker()
 
     # exit the loop using CTRL+C
+    historical_context = []
     while True:
         # function to wait for the user input
         user_input = input("User: ")
+        historical_context = historical_context[:4]
 
+        nlu_input= {"user_input": user_input, "historical_context": historical_context}
+        historical_context.append(user_input)
         # get the NLU output
         nlu_text = args.chat_template.format(PROMPTS["NLU"], user_input)
         nlu_input = tokenizer(nlu_text, return_tensors="pt").to(model.device)
         nlu_output = generate(model, nlu_input, tokenizer, args)
+        # print("NLU Output: ", nlu_output)
         nlu_output = extract_json_from_text(nlu_output)
         print(f"NLU: {nlu_output}")
         st.update(nlu_output)
-        print(f"State: {st.to_string()}")
-        recipe_recommendation_slots = st.get_slots("recipe_recommendation")
-        meals = filter_recipes(recipe_recommendation_slots["nationality"], recipe_recommendation_slots["category"], recipe_recommendation_slots["ingredients"])
-        print(f"Meals: {meals}")
+        # print(f"State: {st.to_string()}")
+
+        # get information from the database
+        if nlu_output["intent"] == "recipe_recommendation":
+            recipe_recommendation_slots = st.get_slots("recipe_recommendation")
+            filtered_recipes = filter_recipes(recipe_recommendation_slots["nationality"], recipe_recommendation_slots["category"], recipe_recommendation_slots["ingredients"])
+            print(f"Meals: {filtered_recipes}")
+
+            dm_input = {"matched_recipes": filtered_recipes, "state": st.to_dict()}
+        
+        elif nlu_output["intent"] == "recipe_information":
+            recipe_information_slots = st.get_slots("recipe_information")
+            recipe_information = get_meal_by_name(recipe_information_slots["recipe_name"])
+
+            dm_input = {"recipe": recipe_information, "state": st.to_dict()}
+
+            # print(f"RECIPE INFORMATION: {recipe_information}")
+        else:
+
+            dm_input = {"state": st.to_dict()}
+            recipe_information = []
+            recipe_information_slots = []
+        
 
         # get the DM output
-        dm_text = args.chat_template.format(PROMPTS["DM"], st.to_string())
+        dm_input = json.dumps(dm_input, indent=4)
+        
+        dm_text = args.chat_template.format(PROMPTS[f"DM_{nlu_output['intent']}"], dm_input)
         dm_input = tokenizer(dm_text, return_tensors="pt").to(model.device)
         dm_output = generate(model, dm_input, tokenizer, args)
         dm_output = extract_json_from_text(dm_output)
-        print(f"DM: {dm_output}")
-
-        if "action" in dm_output:
-            if dm_output["action"] == "confirmation_{recipe_raccomendation}" or dm_output["action"] == "confirmation_recipe_raccomendation":
-                meals = get_meals_by_ingredients(dm_output["slots"]["ingredients"])
-                print(f"Meals: {meals}")
+        # print(f"DM: {dm_output}")
 
         # Optional Pre-Processing for NLG
-        nlg_input = {"dm": dm_output, "nlu": st.to_dict()}
+        if nlu_output["intent"] == "recipe_recommendation":
+            nlg_input = {"dm": dm_output, "nlu": st.to_dict(), "recipes": filtered_recipes}
+        elif nlu_output["intent"] == "recipe_information":
+            nlg_input = {"dm": dm_output, "nlu": st.to_dict(), "recipe": recipe_information, "request" : recipe_information_slots["request"]}
         nlg_input = json.dumps(nlg_input, indent=4)
 
+        # print(f"NLG Input: {nlg_input}")
         # get the NLG output
-        nlg_text = args.chat_template.format(PROMPTS["NLG"], nlg_input)
+        nlg_text = args.chat_template.format(PROMPTS[f"NLG_{nlu_output['intent']}"], nlg_input)
         nlg_input = tokenizer(nlg_text, return_tensors="pt").to(model.device)
         nlg_output = generate(model, nlg_input, tokenizer, args)
 
         print(f"NLG: {nlg_output}")
+        historical_context.append(nlg_output)
 
 
 if __name__ == "__main__":

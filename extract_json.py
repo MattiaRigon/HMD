@@ -30,7 +30,7 @@ def extract_json_from_file(input_path, output_path):
                     json_obj = json.loads(match)
                     json_objects.append(json_obj)
                 except json.JSONDecodeError:
-                    print(f"Invalid JSON detected and skipped: {match[:30]}...")
+                    print(f"Invalid JSON detected and skipped: {match}...")
 
         # Save the extracted JSON objects as strings without quotes
         with open(output_path, 'w') as output_file:

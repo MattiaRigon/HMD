@@ -13,9 +13,9 @@ TEMPLATES = {
 PROMPTS = {
 
     "NLU_INTENT": """You are a natural language understanding module of a recipe bot that has to extract the intent of the user input.:
-    1) Extract intent and classify it between [recipe_recommendation,recipe_summarization,insert_recipe,other]
+    1) Extract intent and classify it between [recipe_recommendation,recipe_information,insert_recipe,other]
     recipe_recommendation: the user is searching for a recipe, the user has give you some information such as ingredients, or nationality, or dish type, or cooking time, or meal type.
-    recipe_summarization: the user is asking for information about a recipe, the user has give you the name of the recipe and a question. Like how to continue the recipe, or how much time it takes to cook.
+    recipe_information: the user is asking for information about a recipe, the user has give you the name of the recipe and a request. Like how to continue the recipe, or how much time it takes to cook.
     """,
     "NLU":""""
     You are a natural language understanding module of a recipe bot, that has to extract slots and sentiment of the user input.
@@ -24,9 +24,9 @@ PROMPTS = {
         nationality (like italian, tunisian, spanish)
         category (like pasta, meat, fish)
         ingredients (like tomato, onion, garlic)
-    For the intent recipe_summarization slots are:
+    For the intent recipe_information slots are:
         recipe_name
-        question
+        request
 If there are not values for a slot put null as value.
 3) Extract sentiment
 4) Return a JSON with keys intent, slots dict, sentiment type.
@@ -43,11 +43,11 @@ If there are multiple null, just place the first one, and if there are no null v
 I want that you return a json with just one field, the action_required, filled with the information that I have gived with you.
 """,
 
-    "NLG": """You are a natural language generation module in a recipe bot, given the action that you have to performe in input you have to generate the correct question for the user.
+    "NLG": """You are a natural language generation module in a recipe bot, given the action that you have to performe in input you have to generate the correct request for the user.
 You will get as input a json with 2 objects input the NLU dictionary and the DM dictionary.
 In the NLU object you will have all the information about intent and slots of the users.
 While in the DM you will have the action required and possible other informations.
- Please you have to answer with the correct question for the user.
- REPLY JUST WITH THE QUESTION FOR THE USER."""
+ Please you have to answer with the correct request for the user.
+ REPLY JUST WITH THE request FOR THE USER."""
 }
 
