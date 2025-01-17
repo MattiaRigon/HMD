@@ -33,6 +33,7 @@ PROMPTS = {
          - recipe_name
          - request (e.g., please provide the ingredients, please provide the procedure. You have to extract the information that the user wants to know about the recipe)
        - For the intent `fallback_policy`, there are no slots. This intent is used when the user input is not neither `recipe_recommendation` nor `recipe_information`.
+         - return just the intent with slots = { }.
     
        If a value for a slot is not provided, set it to null.
     2) Extract sentiment.
@@ -49,6 +50,7 @@ PROMPTS = {
         },
         "sentiment": "positive"
     }
+    **YOU MUST REPLY WITH ONLY THIS JSON OBJECT.**
     """,
 
     "DM_recipe_recommendation": """You are a dialogue manager of a recipe bot responsible for determining the `action_required` field.

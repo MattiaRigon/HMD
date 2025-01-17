@@ -91,9 +91,9 @@ def main():
         nlu_text = args.chat_template.format(PROMPTS["NLU"], user_input)
         nlu_input = tokenizer(nlu_text, return_tensors="pt").to(model.device)
         nlu_output = generate(model, nlu_input, tokenizer, args)
-        # print("NLU Output: ", nlu_output)
+        print("NLU Output: ", nlu_output)
         nlu_output = extract_json_from_text(nlu_output)
-        print(f"NLU: {nlu_output}")
+        # print(f"NLU: {nlu_output}")
         st.update(nlu_output)
         # print(f"State: {st.to_string()}")
 
