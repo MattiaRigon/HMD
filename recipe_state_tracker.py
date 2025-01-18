@@ -83,7 +83,10 @@ class RecipeStateTracker:
         for slot, value in slots.items():
             if slot in self.intents[intent].get_slots().keys() and value:
                 if slot == "ingredients" and value:
-                    list_value = value.split(",")
+                    if isinstance(value, str):
+                        list_value = value.lower().split(",")
+                    elif isinstance(value, list):
+                        list_value = value
                     self.intents[intent].slots[slot] = []
                     for ing in list_value:
                         ing = ing.strip().lower()
