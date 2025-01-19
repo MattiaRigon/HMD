@@ -198,7 +198,6 @@ PROMPTS = {
     Return a JSON object with a single key, `action_required`, containing the determined value.
     """,
 
-
     "NLG_recipe_recommendation": """You are a natural language generation module in a recipe bot that has to reply to the intent of recipe reccomendation.
     Based on the input, you must generate the correct request and/or reply for the user.
     You have recived the list action required from the DM module.

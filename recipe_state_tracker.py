@@ -51,7 +51,6 @@ class RecipeStateTracker:
             "ask_for_procedure": AskForProcedure(),
             "ask_for_time": AskForTime(),
             "not_supported": Intent(),
-            # "insert_recipe": InsertRecipe()
         }   
         
         self.slots = {}
