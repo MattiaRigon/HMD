@@ -49,7 +49,6 @@ class RecipeStateTracker:
             "recipe_recommendation": RecipeRaccomandation(),
             "ask_for_ingredients": AskForIngredients(),
             "ask_for_procedure": AskForProcedure(),
-            "ask_for_time": AskForTime(),
             "not_supported": Intent(),
         }   
         
@@ -101,7 +100,6 @@ class RecipeStateTracker:
                     else:
                         print(f"Invalid value for slot {slot}: {value}")
             else:
-                # print(f"Invalid slot: {slot}")
                 pass
 
     def to_dict(self):
@@ -125,7 +123,6 @@ class RecipeRaccomandation(Intent):
             "nationality": None,
             "category": None,
             "ingredients": None,
-            # "meal_type": None
         }
 
         all_ingredients = get_all_ingredients()
@@ -138,11 +135,9 @@ class RecipeRaccomandation(Intent):
         all_categories = [category.lower() for category in all_categories]
 
         self.values_allowed_slots = {
-            
             "nationality": InListRule(all_areas),
             "ingredients": InListRule(all_ingredients),
             "category": InListRule(all_categories),
-            # "meal_type": InListRule(["breakfast","lunch", "dinner"])
         }
 
 class AskForIngredients(Intent):
@@ -174,47 +169,3 @@ class AskForProcedure(Intent):
             "recipe_name": IsStringRule(),
         }
 
-class AskForTime(Intent):
-    def __init__(self):
-        super().__init__()
-        self.intent = "ask_for_time"
-        self.slots = {
-            "recipe_name": None,
-        }
-        self.values_allowed_slots = {
-            "recipe_name": IsStringRule(),
-        }
-
-class InsertRecipe(Intent):
-    def __init__(self):
-        super().__init__()
-        self.intent = "insert_recipe"
-        self.slots = {
-            "recipe_name": None,
-            "nationality": None,
-            "dish_type": None,
-            "ingredients": None,
-            "cooking_time": None
-        }
-        self.values_allowed_slots = {
-            "nationality": InListRule(["italian", "french", "spanish"]),
-            "dish_type": InListRule(["pasta", "meat", "fish"]),
-            "ingredients": InListRule(["tomato", "onion", "garlic"]),
-            "cooking_time": IsIntegerRule(),
-            "meal_type": InListRule(["breakfast","lunch", "dinner"]),
-            "recipe_name": IsStringRule()
-        }
-
-class CalculateQuantity(Intent):
-    def __init__(self):
-        super().__init__()
-
-        self.intent = "calculate_quantity"
-        self.slots = {
-            "recipe_name": None,
-            "number_people": None
-        }
-        self.values_allowed_slots = {
-            "recipe_name": IsStringRule(),
-            "number_people": IsIntegerRule()
-        }

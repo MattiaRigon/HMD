@@ -2,7 +2,7 @@ import argparse
 from argparse import Namespace
 from recipe_state_tracker import RecipeStateTracker
 import torch
-from utils_cluster import load_model, generate, MODELS, TEMPLATES, PROMPTS
+from utils import load_model, generate, MODELS, TEMPLATES, PROMPTS
 import json
 import re
 from data.database import filter_recipes, get_meal_by_name, get_meals_by_ingredients

@@ -145,8 +145,6 @@ def get_meals_by_ingredients(ingredients: List[str]):
             results.append(meal.strMeal)
     return results
 
-
-
 def get_all_categories():
     return list(set(meal.strCategory for meal in get_all_meals() if meal.strCategory))
 
