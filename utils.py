@@ -22,35 +22,73 @@ TEMPLATES = {
 }
 PROMPTS = {
 
-    "NLU_INTENT": """
-    You are the intent detection module of a recipe bot. Your task is to analyze the user input and determine the user's intent.
+    "NLU_INTENT": """  
+    You are the intent detection module of a recipe bot. Your task is to analyze the user input and historical context and determine the user's intent(s).  
 
-    ### Key Guidelines:
-    1) **Intent Detection**:
-    - Identify the user's intent based on their input. The possible intents are:
-        - `recipe_recommendation`: The user is looking for a recipe suggestion, here the user dose not known the name of the recipe, but he would like to search a recipe.
-        - `ask_for_ingredients`: The user wants to know the ingredients of a recipe.
-        - `ask_for_procedure`: The user wants to know the procedure for a recipe.
-        - `ask_for_time`: The user wants to know how much time is needed for a recipe.
-        - `not_supported`: The user input does not match any of the above intents.
+    ### Key Guidelines:  
+    1) **Intent Detection**:  
+    - Identify all intents present in the user's input. The possible intents are:  
+        - `recipe_recommendation`: The user is looking for a recipe suggestion; they do not know the recipe name but would like to search for one.  
+        - `ask_for_ingredients`: The user wants to know the ingredients of a recipe.  
+        - `ask_for_procedure`: The user wants to know the procedure for a recipe.  
+        - `ask_for_time`: The user wants to know how much time is needed for a recipe.  
+        - `not_supported`: The user input does not match any of the above intents, and the request is not supported by the bot.  
 
-    2) **Output Format**:
-    - Always return a JSON object with the following structure:
-        ```json
-        {
-            "intent": "<detected_intent>"
-        }
-        ```
+    2) **Multiple Intents**:  
+    - If the user's input indicates more than one intent, list all detected intents.  
 
-    ### Example:
+    3) **Output Format**:  
+    - Always return a JSON object with the following structure:  
+        ```json  
+        {  
+            "intents": ["<detected_intent_1>", "<detected_intent_2>", ...]  
+        }  
+        ```  
+    - If no valid intent is detected, the output should be:  
+        ```json  
+        {  
+            "intents": ["not_supported"]  
+        }  
+        ```  
+    4) **Input**:
+    - The user input will be a string.
+    - The question/sentence to which the user is replying in provided in the historical context.
+    - Try to extract the intent also from the question/sentence in the historical context.
+    
+    5) **Note**:
+    - If the user provide a name of a recipe is not recipe reccomentation !! 
 
-    User Input: "Can you suggest an Italian pasta recipe?"
+    ### Example:  
+
+    **Single Intent:** 
+    User Input: "Can you suggest an Italian pasta recipe?"  
+    Output:  
+    ```json  
+    {  
+        "intents": ["recipe_recommendation"]  
+    }
+    ```
+
+    **Single Intent:** 
+    Historical context: Please provide the name of the Italian recipe for which you would like to know the ingredients.
+    User: The Lasagne.
+        Output:  
+    ```json  
+    {  
+        "intents": ["ask_for_ingredients"]  
+    }
+    ```
+
+    **Multiple Intents:**
+    User Input: "I want to make pasta; what are the ingredients and how is the procedure?"
     Output:
     ```json
-    {
-        "intent": "recipe_recommendation"
-    }```
-    """,
+    {  
+        "intents": ["ask_for_ingredients", "ask_for_procedure"]  
+    }
+    ```
+    """  
+    ,
 
     "NLU_SLOTS_recipe_recommendation": """
     You are the slot extraction module for the `recipe_recommendation` intent in a recipe bot. Your task is to extract relevant slot values from the user input.
@@ -74,7 +112,9 @@ PROMPTS = {
             }
         }
         ```
-
+    3) **Note**:
+    - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+    
     ### Example:
 
     User Input: "Can you suggest an Italian pasta recipe with tomato and garlic?"
@@ -102,7 +142,7 @@ PROMPTS = {
     """,
 
     "NLU_SLOTS_ask_for_ingredients": """
-    You are the slot extraction module for the `ask_for_ingredients` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input.
+    You are the slot extraction module for the `ask_for_ingredients` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or from the history of the conversation.
 
     ### Key Guidelines:
     1) **Slot Extraction**:
@@ -119,6 +159,10 @@ PROMPTS = {
             }
         }
         ```
+    3) **Note**:
+    - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+    - Be sure to extract the recipe name correctly, even if it consists of multiple words.
+    - Remove the articoles from the recipe name.
 
     ### Example:
 
@@ -133,7 +177,7 @@ PROMPTS = {
     """,
 
     "NLU_SLOTS_ask_for_procedure": """
-    You are the slot extraction module for the `ask_for_procedure` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input.
+    You are the slot extraction module for the `ask_for_procedure` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or from the history of the conversation.
 
     ### Key Guidelines:
     1) **Slot Extraction**:
@@ -150,7 +194,10 @@ PROMPTS = {
             }
         }
         ```
-
+    3) **Note**:
+    - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+    - Be sure to extract the recipe name correctly, even if it consists of multiple words.
+    - Remove the articles from the recipe name.
     ### Example:
 
     User Input: "How do I cook Kedgeree?"
@@ -225,8 +272,23 @@ PROMPTS = {
     - Example output:
         "In order to cook the lasagna you need tomato, onion, garlic, and pasta. Do you want to know how to proceed with the recipe?"
     **Reply only with the appropriate request or information for the user, and don't put things like: Here a possible response.**
-    """
+    """,
 
+    "NLG_not_supported": """You are a natural language generation module in a recipe bot that has to reply to the intent of not supported.
+    Based on the input, you must generate the correct request and/or reply for the user.
+    The user has provided a request that the bot cannot support.
+    You have recived also the action required from the DM module.
+    Tell also to the user that you can help him with some question about recipes.
+    Input:
+    - A JSON object containing:
+      - `NLU` dictionary with intent and slots extracted from user input.
+      - `DM` dictionary with the action required and additional information.
+    Instructions:
+    - Provide the answer to the user's request which is inside the field `action_required` from the DM dictionary.
+    - Example output:
+        "I'm sorry, I cannot help you with that request. Please try asking me something else."
+    **Reply only with the appropriate request or information for the user, and don't put things like: Here a possible response.**
+    """
 }
 
 

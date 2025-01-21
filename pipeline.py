@@ -80,31 +80,38 @@ def main():
     historical_context = []
     while True:
         user_input = get_user_input(historical_context)
-        nlu = process_nlu(user_input, state_tracker, model, tokenizer, args)
+        intents = process_nlu(user_input, state_tracker, historical_context, model, tokenizer, args)
 
-        if nlu["intent"] != "not_supported":
-            update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)
+        for intent in intents:
+            nlu = {"intent": intent, "slots": {}}
+            if intent!= "not_supported":
+                update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)
 
-        state_tracker.update(nlu)
-        
-        dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
-        dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args)
-        
-        nlg_input, prompt = prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information)
-        nlg_output = generate_nlg_output(nlg_input, prompt, model, tokenizer, args)
+            state_tracker.update(nlu)
+            
+            dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
+            dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args)
+            
+            nlg_input, prompt = prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information)
+            nlg_output = generate_nlg_output(nlg_input, prompt, model, tokenizer, args)
 
-        print(f"NLG: {nlg_output}")
-        historical_context.append(nlg_output)
+            print(f"NLG: {nlg_output}")
+            historical_context.append(nlg_output)
 
 
 def get_user_input(historical_context):
     user_input = input("User: ")
-    historical_context = historical_context[:4]
+    historical_context.append(user_input)
+    historical_context = historical_context[:3]
     return user_input
 
 
-def process_nlu(user_input, state_tracker, model, tokenizer, args):
-    nlu_input = {"user_input": user_input, "state_tracker": state_tracker.to_string()}
+def process_nlu(user_input, state_tracker, historical_context, model, tokenizer, args):
+    if len(historical_context) >= 2:
+        context = historical_context[-2]
+    else:
+        context = ""
+    nlu_input = {"user_input": user_input,"historical_context": context}
     print(f"NLU Input: {nlu_input}")
 
     nlu_text = args.chat_template.format(PROMPTS["NLU_INTENT"], nlu_input)
@@ -113,7 +120,7 @@ def process_nlu(user_input, state_tracker, model, tokenizer, args):
     nlu_output = extract_json_from_text(nlu_output)
     print(f"NLU INTENT: {nlu_output}")
 
-    return {"intent": nlu_output["intent"], "slots": {}}
+    return nlu_output["intents"]
 
 
 def update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args):
@@ -124,6 +131,7 @@ def update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args):
     nlu_output = extract_json_from_text(nlu_output)
     print(f"NLU SLOTS: {nlu_output}")
     nlu["slots"] = nlu_output["slots"]
+    
 
 
 def generate_dm_input(nlu, state_tracker):
@@ -139,7 +147,10 @@ def generate_dm_input(nlu, state_tracker):
 
     elif nlu["intent"] in {"ask_for_ingredients", "ask_for_procedure", "ask_for_time"}:
         slots = state_tracker.get_slots(nlu["intent"])
-        recipe_information = get_meal_by_name(slots["recipe_name"])
+        if slots["recipe_name"] is None:
+            recipe_information = None
+        else:
+            recipe_information = get_meal_by_name(slots["recipe_name"])
         return {"recipe": recipe_information, "state": state_tracker.to_dict()}, [], recipe_information
 
     return {"state": state_tracker.to_dict()}, [], []
@@ -153,13 +164,25 @@ def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, mode
         return extract_json_from_text(dm_output)
 
     elif nlu["intent"] == "ask_for_ingredients":
-        return json.dumps({"action_required": ["provide list of ingredients"]}, indent=4)
+        if recipe_information is None:
+            return json.dumps({"action_required": ["ask to the user to provide recipe name for which wants the igredients"]}, indent=4)
+        else:
+            return json.dumps({"action_required": ["provide list of ingredients"]}, indent=4)
 
     elif nlu["intent"] == "ask_for_procedure":
-        return json.dumps({"action_required": ["provide procedure of the recipe"]}, indent=4)
+        if recipe_information is None:
+            return json.dumps({"action_required": ["ask to the user to provide recipe name for which wants know the procedure"]}, indent=4)
+        else:
+            return json.dumps({"action_required": ["provide procedure of the recipe"]}, indent=4)
 
     elif nlu["intent"] == "ask_for_time":
-        return json.dumps({"action_required": ["provide the time needed for the recipe"]}, indent=4)
+        if recipe_information is None:
+            return json.dumps({"action_required": ["ask to the user to provide recipe name for which wants know how much time is needed in order to do the recipe"]}, indent=4)
+        else:
+            return json.dumps({"action_required": ["provide the time needed for the recipe"]}, indent=4)
+    
+    elif nlu["intent"] == "not_supported":
+        return json.dumps({"action_required": ["tell to the user that the bot cannot help for his request"]}, indent=4)
 
 
 def prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information):
@@ -168,6 +191,9 @@ def prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_in
 
     elif nlu["intent"] in {"ask_for_ingredients", "ask_for_procedure", "ask_for_time"}:
         return {"dm": dm_output, "nlu": state_tracker.to_dict(), "recipe": recipe_information}, PROMPTS[f"NLG_recipe_information"]
+
+    elif nlu["intent"] == "not_supported":
+        return {"dm": dm_output, "nlu": state_tracker.to_dict()}, PROMPTS[f"NLG_not_supported"]
 
     raise ValueError("Invalid intent detected.")
 
