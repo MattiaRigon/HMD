@@ -1,5 +1,6 @@
 import argparse
 from argparse import Namespace
+import sys
 from recipe_state_tracker import RecipeStateTracker
 import torch
 from utils import load_model, generate, MODELS, TEMPLATES, PROMPTS
@@ -133,14 +134,11 @@ def main():
             print(f"NLG OUTPUT: {nlgs[0]}")
             historical_context.append(nlgs[0])
 
-
-
 def get_user_input(historical_context):
     user_input = input("User: ")
     historical_context.append(user_input)
     historical_context = historical_context[:3]
     return user_input
-
 
 def process_nlu(user_input, state_tracker, historical_context, model, tokenizer, args):
     if len(historical_context) >= 2:
@@ -157,6 +155,15 @@ def process_nlu(user_input, state_tracker, historical_context, model, tokenizer,
     print(f"NLU INTENT: {nlu_output}")
     if "intents" not in list(nlu_output.keys()):
         return ["not_supported"]
+    if "not_supported" in nlu_output["intents"] and len(nlu_output["intents"]) > 1:
+        nlu_output["intents"].remove("not_supported")
+
+    if "end_conversation" in nlu_output["intents"] and len(nlu_output["intents"]) > 1:
+        nlu_output["intents"].remove("end_conversation")
+    elif "end_conversation" in nlu_output["intents"]:
+        print("Bye!")
+        sys.exit()
+    
     return nlu_output["intents"]
 
 
@@ -194,7 +201,7 @@ def generate_dm_input(nlu, state_tracker):
 
 
 def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args):
-    if nlu["intent"] in {"recipe_recommendation", "not_supported"}:
+    if nlu["intent"] in {"recipe_recommendation"}:
         dm_text = args.chat_template.format(PROMPTS[f"DM_{nlu['intent']}"], json.dumps(dm_input, indent=4))
         tokenized_input = tokenizer(dm_text, return_tensors="pt").to(model.device)
         dm_output = generate(model, tokenized_input, tokenizer, args)
@@ -219,7 +226,7 @@ def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, mode
             return json.dumps({"action_required": ["provide the time needed for the recipe"]}, indent=4)
     
     elif nlu["intent"] == "not_supported":
-        return json.dumps({"action_required": ["tell to the user that the bot cannot help for his request"]}, indent=4)
+        return json.dumps({"action_required": ["tell to the user that the bot cannot help for his request or it has understood wrong, ask to the user to repeat his intention."]}, indent=4)
 
 
 def prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information):

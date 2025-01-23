@@ -49,7 +49,9 @@ class RecipeStateTracker:
             "recipe_recommendation": RecipeRaccomandation(),
             "ask_for_ingredients": AskForIngredients(),
             "ask_for_procedure": AskForProcedure(),
+            "ask_for_time": AskForTime(),
             "not_supported": Intent(),
+            "end_conversation": Intent(),
         }   
         
         self.slots = {}
@@ -114,6 +116,17 @@ class RecipeStateTracker:
 
     def to_string(self):
         return json.dumps(self.to_dict(), indent=4)
+    
+class AskForTime(Intent):
+    def __init__(self):
+        super().__init__()
+        self.intent = "ask_for_time"
+        self.slots = {
+            "recipe_name": None,
+        }
+        self.values_allowed_slots = {
+            "recipe_name": IsStringRule(),
+        }
     
 class RecipeRaccomandation(Intent):
     def __init__(self):

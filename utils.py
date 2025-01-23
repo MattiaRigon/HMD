@@ -28,12 +28,12 @@ PROMPTS = {
     ### Key Guidelines:  
     1) **Intent Detection**:  
     - Identify all intents present in the user's input. The possible intents are:  
-        - `recipe_recommendation`: The user is looking for a recipe suggestion; they do not know the recipe name but would like to search for one.  
+        - `recipe_recommendation`: The user is looking for a recipe suggestion; they do not know the recipe name but would like to search for one providing nationality, category, or ingredients.
         - `ask_for_ingredients`: The user wants to know the ingredients of a recipe.  
         - `ask_for_procedure`: The user wants to know the procedure for a recipe.  
         - `ask_for_time`: The user wants to know how much time is needed for a recipe.  
         - `not_supported`: The user input does not match any of the above intents, and the request is not supported by the bot.  
-
+        - `end_conversation`: The user wants to end the conversation.
     2) **Multiple Intents**:  
     - If the user's input indicates more than one intent, list all detected intents.  
 
@@ -229,6 +229,49 @@ PROMPTS = {
     }```
     """,
 
+    """NLU_SLOTS_ask_for_time""": """You are the slot extraction module for the `ask_for_time` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or if you don't find a recipe name in the user input look it in the historical conversation.
+    ### Key Guidelines:
+    1) **Slot Extraction**:
+        - Extract the following slot from the user input:
+            - `recipe_name` (the name of the recipe in question) 
+                - If multiple recipe names are mentioned, extract them all and return them as a list.
+        - If no recipe name is provided, set the `recipe_name` slot to an empty list `[]`.
+
+    2) **Output Format**:
+        - Always return a JSON object with the following structure:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": ["<value_1>", "<value_2>", ...] 
+                }
+            }
+            ```
+        - If no recipe name is found, the output should be:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": null
+                }
+            }
+            ```
+
+    3) **Note**:
+        - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+        - Be sure to extract the recipe name correctly, even if it consists of multiple words.
+        - Remove the articles from the recipe name.
+
+    ### Example:
+
+    User Input: "How long does it take to cook Kedgeree and Chicken Tikka Masala?"
+    Output:
+    ```json
+    {
+        "slots": {
+            "recipe_name": ["Kedgeree", "Chicken Tikka Masala"]
+        }
+    }```
+    """,
+
     "DM_recipe_recommendation": """You are a dialogue manager of a recipe bot responsible for determining the `action_required` field.
     You will receive a JSON composed by the NLU component, composed by the keys `intent`, `slots`, and `sentiment` .
     - `intent` and `sentiment` are strings or null.
@@ -269,11 +312,12 @@ PROMPTS = {
     You have recived the list action required from the DM module.
     The actions are:
         - no_recipe_found: The bot has not found any recipe that matches the user's request. You should tell to the user that there are no recipes that match the request. And ask to him if he want to change his request.
-        - propose_recipe: The bot has found some recipes that match the user's request. You should provide the recipes to the user, the recipes are in the list of recipes that you have recived from the DM module.
+        - propose_recipe: The bot has found some recipes that match the user's request. You should provide ALL the recipes to the user, the recipes are in the list of recipes that you have recived from the DM module.
         - req_info_{slot_name}: The bot needs more information about the slot_name. You should ask the user to provide more information about the slot_name if he want to filter more the recipes.
     - Example output:
       "With the information you have provided, you could cook Italian Lasagna. Do you want to know the recipe? Otherwise, please provide more details, like the ingredients you have in your fridge."
     Rembember to provide the recipe if there are some.
+    If you are providing recipes, please provide all the list that you have recived from the DM module.
     **Reply only with the appropriate request or information for the user.**
     """,
 
