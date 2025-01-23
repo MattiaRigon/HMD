@@ -6,6 +6,7 @@ from utils import load_model, generate, MODELS, TEMPLATES, PROMPTS
 import json
 import re
 from data.database import filter_recipes, get_meal_by_name, get_meals_by_ingredients
+from copy import deepcopy
 
 def extract_json_from_text(content):
 
@@ -81,22 +82,57 @@ def main():
     while True:
         user_input = get_user_input(historical_context)
         intents = process_nlu(user_input, state_tracker, historical_context, model, tokenizer, args)
-
+        nlgs = []
         for intent in intents:
             nlu = {"intent": intent, "slots": {}}
+            nlus = [nlu]
             if intent!= "not_supported":
-                update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)
+                update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)  
+                if nlu["intent"] == "recipe_recommendation":
+                    if isinstance(nlu["slots"]["nationality"], str):
+                        nlu["slots"]["nationality"] =  nlu["slots"]["nationality"].replace(" ","").split(",")
+                    if isinstance(nlu["slots"]["nationality"], list):
+                        nationalities = nlu["slots"]["nationality"]
+                        nlu["slots"]["nationality"] = nationalities[0]
+                        nationalities = nationalities[1:]
+                        for i in range(len(nationalities)):
+                            new_nlu = deepcopy(nlu)
+                            new_nlu["slots"]["nationality"] = nationalities[i]
+                            nlus.append(new_nlu)
+                if nlu["intent"] in ["ask_for_ingredients","ask_for_procedure","ask_for_time"]:
+                    if isinstance(nlu["slots"]["recipe_name"], str):
+                        nlu["slots"]["recipe_name"] =  nlu["slots"]["recipe_name"].replace(" ","").split(",")
+                    if isinstance(nlu["slots"]["recipe_name"], list):
+                        recipe_names = nlu["slots"]["recipe_name"]
+                        if len(recipe_names) == 0:
+                            nlu["slots"]["recipe_name"] = None
+                        else:
+                            nlu["slots"]["recipe_name"] = recipe_names[0]
+                            recipe_names = recipe_names[1:]
+                            for i in range(len(recipe_names)):
+                                new_nlu = deepcopy(nlu)
+                                new_nlu["slots"]["recipe_name"] = recipe_names[i]
+                                nlus.append(new_nlu)
+            for nlu in nlus:
+                state_tracker.update(nlu)
+                
+                dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
+                dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args)
+                
+                nlg_input, prompt = prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information)
+                nlg_output = generate_nlg_output(nlg_input, prompt, model, tokenizer, args)
+                nlgs.append(nlg_output)                
 
-            state_tracker.update(nlu)
-            
-            dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
-            dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args)
-            
-            nlg_input, prompt = prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information)
+        if len(nlgs) > 1:
+            nlg_input = nlgs
+            prompt = PROMPTS["NLG_END"]
             nlg_output = generate_nlg_output(nlg_input, prompt, model, tokenizer, args)
-
-            print(f"NLG: {nlg_output}")
+            print(f"NLG OUTPUT: {nlg_output}")
             historical_context.append(nlg_output)
+        else:
+            print(f"NLG OUTPUT: {nlgs[0]}")
+            historical_context.append(nlgs[0])
+
 
 
 def get_user_input(historical_context):
@@ -119,7 +155,8 @@ def process_nlu(user_input, state_tracker, historical_context, model, tokenizer,
     nlu_output = generate(model, tokenized_input, tokenizer, args)
     nlu_output = extract_json_from_text(nlu_output)
     print(f"NLU INTENT: {nlu_output}")
-
+    if "intents" not in list(nlu_output.keys()):
+        return ["not_supported"]
     return nlu_output["intents"]
 
 

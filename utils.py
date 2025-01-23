@@ -141,71 +141,90 @@ PROMPTS = {
 
     """,
 
-    "NLU_SLOTS_ask_for_ingredients": """
-    You are the slot extraction module for the `ask_for_ingredients` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or from the history of the conversation.
+    "NLU_SLOTS_ask_for_ingredients": """You are the slot extraction module for the `ask_for_ingredients` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or from the history of the conversation.
 
     ### Key Guidelines:
     1) **Slot Extraction**:
-    - Extract the following slot from the user input:
-        - `recipe_name` (the name of the recipe in question)
-    - If the recipe name is not explicitly provided, set it to `null`.
+        - Extract the following slot from the user input:
+            - `recipe_name` (the name of the recipe in question) 
+                - If multiple recipe names are mentioned, extract them all and return them as a list.
+        - If no recipe name is provided, set the `recipe_name` slot to an empty list `[]`.
 
     2) **Output Format**:
-    - Always return a JSON object with the following structure:
-        ```json
-        {
-            "slots": {
-                "recipe_name": "<value_or_null>"
+        - Always return a JSON object with the following structure:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": ["<value_1>", "<value_2>", ...] 
+                }
             }
-        }
-        ```
+            ```
+        - If no recipe name is found, the output should be:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": null
+                }
+            }
+            ```
+
     3) **Note**:
-    - You could extract the slots also from the history of the conversation, if the user has already provided some information.
-    - Be sure to extract the recipe name correctly, even if it consists of multiple words.
-    - Remove the articoles from the recipe name.
+        - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+        - Be sure to extract the recipe name correctly, even if it consists of multiple words.
+        - Remove the articles from the recipe name.
 
     ### Example:
 
-    User Input: "What are the ingredients for Kedgeree?"
+    User Input: "What are the ingredients for Kedgeree and Chicken Tikka Masala?"
     Output:
     ```json
     {
         "slots": {
-            "recipe_name": "Kedgeree"
+            "recipe_name": ["Kedgeree", "Chicken Tikka Masala"]
         }
     }```
     """,
 
-    "NLU_SLOTS_ask_for_procedure": """
-    You are the slot extraction module for the `ask_for_procedure` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or from the history of the conversation.
+    "NLU_SLOTS_ask_for_procedure": """You are the slot extraction module for the `ask_for_procedure` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or if you don't find a recipe name in the user input look it in the historical conversation.
 
     ### Key Guidelines:
     1) **Slot Extraction**:
-    - Extract the following slot from the user input:
-        - `recipe_name` (the name of the recipe in question)
-    - If the recipe name is not explicitly provided, set it to `null`.
+        - Extract the following slot from the user input:
+            - `recipe_name` (the name of the recipe in question) 
+                - If multiple recipe names are mentioned, extract them all and return them as a list.
+        - If no recipe name is provided, set the `recipe_name` slot to an empty list `[]`.
 
     2) **Output Format**:
-    - Always return a JSON object with the following structure:
-        ```json
-        {
-            "slots": {
-                "recipe_name": "<value_or_null>"
+        - Always return a JSON object with the following structure:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": ["<value_1>", "<value_2>", ...] 
+                }
             }
-        }
-        ```
+            ```
+        - If no recipe name is found, the output should be:
+            ```json
+            {
+                "slots": {
+                    "recipe_name": null
+                }
+            }
+            ```
+
     3) **Note**:
-    - You could extract the slots also from the history of the conversation, if the user has already provided some information.
-    - Be sure to extract the recipe name correctly, even if it consists of multiple words.
-    - Remove the articles from the recipe name.
+        - You could extract the slots also from the history of the conversation, if the user has already provided some information.
+        - Be sure to extract the recipe name correctly, even if it consists of multiple words.
+        - Remove the articles from the recipe name.
+
     ### Example:
 
-    User Input: "How do I cook Kedgeree?"
+    User Input: "How do I cook Kedgeree and Chicken Tikka Masala?"
     Output:
     ```json
     {
         "slots": {
-            "recipe_name": "Kedgeree"
+            "recipe_name": ["Kedgeree", "Chicken Tikka Masala"]
         }
     }```
     """,
@@ -288,6 +307,40 @@ PROMPTS = {
     - Example output:
         "I'm sorry, I cannot help you with that request. Please try asking me something else."
     **Reply only with the appropriate request or information for the user, and don't put things like: Here a possible response.**
+    """,
+
+    "NLG_END": """
+        You are a natural language generation (NLG) module that combines responses from multiple NLG components in a recipe bot. Each NLG component generates responses for specific intents or slot-based queries, and your task is to merge them into a single cohesive and user-friendly response. 
+
+    ### Key Guidelines:
+    1) **Input**:
+    - You will receive a list of NLG responses from different components.
+    - The responses may include overlapping or complementary information.
+    
+    2) **Output Requirements**:
+    - Combine the NLG responses into a single cohesive and natural-sounding reply.
+    - Ensure clarity and avoid redundancy while preserving all key information.
+    - Adapt the tone to be friendly and conversational.
+    - If the responses ask for further input from the user (e.g., preferences or missing details), consolidate the requests to avoid duplication.
+
+    3) **Formatting**:
+    - Use clear and concise language.
+    - If presenting multiple options (e.g., recipes), organize them logically, grouping them by nationality or type, if applicable.
+    - Ensure the final output reads smoothly and naturally, as if coming from a single source.
+
+    4) **Examples**:
+
+    **Example 1:**
+    **Input:**
+    - NLG 1: "Here are some delicious Italian recipes that match your request. Would you like to know the recipe for Lasagne or Ribollita?"
+    - NLG 2: "Ahah, I think I've found some delicious British recipes for you! Based on your request, I'd like to propose the following recipes: Fish pie, Kedgeree, and Eton Mess. Would you like to know more about any of these recipes, or would you like me to provide more options? Additionally, could you please tell me what type of dish you're in the mood for (e.g. main course, dessert, etc.) and what ingredients you have available in your kitchen?"
+
+    **Output:**
+    "Here are some delicious recipes that match your request!  
+    For Italian cuisine, I suggest Lasagne or Ribollita.  
+    For British cuisine, you might enjoy Fish Pie, Kedgeree, or Eton Mess.  
+
+    Would you like to know more about any of these recipes? Or perhaps you could share what type of dish you're in the mood for (e.g., main course, dessert) and the ingredients you have available in your kitchen so I can refine the suggestions!"
     """
 }
 

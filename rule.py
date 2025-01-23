@@ -48,3 +48,8 @@ class RangeRule(Rule):
 
     def validate(self, value):
         return isinstance(value, int) and self.min_value <= value <= self.max_value
+
+class IsListRule(Rule):
+    """Rule to validate if a value is a list."""
+    def validate(self, value):
+        return isinstance(value, list)
