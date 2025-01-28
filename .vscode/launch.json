@@ -20,6 +20,14 @@
             "program": "${workspaceFolder}/pipeline.py",
             "args": ["llama3"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "NLU evaluation",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/nlu_evaluation.py",
+            "args": ["llama3"],
+            "console": "integratedTerminal"
         }
     ]
 }

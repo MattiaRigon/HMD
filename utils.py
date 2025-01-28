@@ -33,7 +33,7 @@ PROMPTS = {
         - `ask_for_procedure`: The user wants to know the procedure for a recipe.  
         - `ask_for_time`: The user wants to know how much time is needed for a recipe.  
         - `not_supported`: The user input does not match any of the above intents, and the request is not supported by the bot.  
-        - `end_conversation`: The user wants to end the conversation.
+        - `end_conversation`: The user wants to end the conversation, put attention to the question that the bot has to ask to the user, if is asking informations or intentions is not the case of end conversation.
     2) **Multiple Intents**:  
     - If the user's input indicates more than one intent, list all detected intents.  
 
@@ -229,7 +229,7 @@ PROMPTS = {
     }```
     """,
 
-    """NLU_SLOTS_ask_for_time""": """You are the slot extraction module for the `ask_for_time` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or if you don't find a recipe name in the user input look it in the historical conversation.
+    "NLU_SLOTS_ask_for_time": """You are the slot extraction module for the `ask_for_time` intent in a recipe bot. Your task is to extract the `recipe_name` slot from the user input, or if you don't find a recipe name in the user input look it in the historical conversation.
     ### Key Guidelines:
     1) **Slot Extraction**:
         - Extract the following slot from the user input:

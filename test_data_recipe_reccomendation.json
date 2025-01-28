@@ -1,0 +1,3173 @@
+[
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Mustard"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Mustard?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Mustard"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Iceberg Lettuce",
+                "Red Pepper"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Iceberg Lettuce and Red Pepper?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "IcebergLettuce",
+                "RedPepper"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Canadian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Mustard"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Mustard?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Mustard"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Iceberg Lettuce",
+                "Red Pepper"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Iceberg Lettuce and Red Pepper?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "IcebergLettuce",
+                "RedPepper"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Mustard"
+            ],
+            "nationality": [],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "Suggest a Pasta recipe with Mustard as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pasta"
+            ],
+            "ingredients": [
+                "Mustard"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "What's a good Pasta recipe for Canadian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": [
+                "pasta"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Canadian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "What Pasta recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pasta"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Mustard"
+            ],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Canadian recipe with Mustard?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": [
+                "Mustard"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Mustard"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Mustard?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Mustard"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Canadian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian",
+                "Tunisian"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Canadian or Tunisian cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian",
+                "Tunisian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Plain flour"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Plain flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Plainflour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Icing Sugar",
+                "Ginger"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Icing Sugar and Ginger?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "IcingSugar",
+                "Ginger"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Turkish"
+            ],
+            "category": []
+        },
+        "question": "Show me a Turkish dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Plain flour"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Plain flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Plainflour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Icing Sugar",
+                "Ginger"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Icing Sugar and Ginger?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "IcingSugar",
+                "Ginger"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Plain flour"
+            ],
+            "nationality": [],
+            "category": [
+                "Chicken"
+            ]
+        },
+        "question": "Suggest a Chicken recipe with Plain flour as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Plainflour",
+                "chicken"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Turkish"
+            ],
+            "category": [
+                "Chicken"
+            ]
+        },
+        "question": "What's a good Chicken recipe for Turkish cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Turkish"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Turkish recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Chicken"
+            ]
+        },
+        "question": "What Chicken recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "meat"
+            ],
+            "ingredients": [
+                "chicken"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Plain flour"
+            ],
+            "nationality": [
+                "Turkish"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Turkish recipe with Plain flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": [
+                "Plainflour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Plain flour"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Plain flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Plainflour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Turkish"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Turkish dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Turkish",
+                "Croatian"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Turkish or Croatian cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "TurkishorCroatian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Sesame Seed Burger Buns",
+                "Macaroni"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Sesame Seed Burger Buns and Macaroni?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "macaroni"
+            ],
+            "ingredients": [
+                "SesameSeedBurgerBuns",
+                "Macaroni"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Italian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Italian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Sesame Seed Burger Buns",
+                "Macaroni"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Sesame Seed Burger Buns and Macaroni?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "SesameSeedBurgerBuns",
+                "Macaroni"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": [
+                "Beef"
+            ]
+        },
+        "question": "Suggest a Beef recipe with meringue nests as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Beef"
+            ],
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Italian"
+            ],
+            "category": [
+                "Beef"
+            ]
+        },
+        "question": "What's a good Beef recipe for Italian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian"
+            ],
+            "category": [
+                "Beef"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Italian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Italian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Beef"
+            ]
+        },
+        "question": "What Beef recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "beef"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [
+                "Italian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Italian recipe with meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian"
+            ],
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Italian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Italian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Italian",
+                "Dutch"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Italian or Dutch cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Italian",
+                "Dutch"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Smoked Haddock"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Smoked Haddock?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "SmokedHaddock"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Brown Lentils",
+                "Flour"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Brown Lentils and Flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BrownLentils",
+                "Flour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Egyptian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Smoked Haddock"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Smoked Haddock?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "SmokedHaddock"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Brown Lentils",
+                "Flour"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Brown Lentils and Flour?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BrownLentils",
+                "Flour"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Smoked Haddock"
+            ],
+            "nationality": [],
+            "category": [
+                "Pork"
+            ]
+        },
+        "question": "Suggest a Pork recipe with Smoked Haddock as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pork"
+            ],
+            "ingredients": [
+                "SmokedHaddock"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": [
+                "Pork"
+            ]
+        },
+        "question": "What's a good Pork recipe for Egyptian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": [
+                "Pork"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Egyptian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Pork"
+            ]
+        },
+        "question": "What Pork recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pork"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Smoked Haddock"
+            ],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Egyptian recipe with Smoked Haddock?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": [
+                "SmokedHaddock"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Smoked Haddock"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Smoked Haddock?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "breakfast"
+            ],
+            "ingredients": [
+                "SmokedHaddock"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Egyptian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian",
+                "Dutch"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Egyptian or Dutch cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian",
+                "Dutch"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion",
+                "Carrot"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Red Onion and Carrot?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedOnion",
+                "Carrot"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Indian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion",
+                "Carrot"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Red Onion and Carrot?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedOnion",
+                "Carrot"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "Suggest a Seafood recipe with meringue nests as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Seafood"
+            ],
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "What's a good Seafood recipe for Indian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": [
+                "Seafood"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Indian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "What Seafood recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "seafood"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Indian recipe with meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "meringue nests"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using meringue nests?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "meringuenests"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Indian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian",
+                "Dutch"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Indian or Dutch cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian",
+                "Dutch"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Basil Leaves"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Basil Leaves?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BasilLeaves"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Onion Salt",
+                "Soy Sauce"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Onion Salt and Soy Sauce?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Onion",
+                "Salt",
+                "SoySauce"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "French"
+            ],
+            "category": []
+        },
+        "question": "Show me a French dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Basil Leaves"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Basil Leaves?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BasilLeaves"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Onion Salt",
+                "Soy Sauce"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Onion Salt and Soy Sauce?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "OnionSalt",
+                "SoySauce"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Basil Leaves"
+            ],
+            "nationality": [],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "Suggest a Miscellaneous recipe with Basil Leaves as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": [
+                "BasilLeaves"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "French"
+            ],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "What's a good Miscellaneous recipe for French cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French"
+            ],
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "French"
+            ],
+            "category": []
+        },
+        "question": "What's a classic French recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "What Miscellaneous recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Basil Leaves"
+            ],
+            "nationality": [
+                "French"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional French recipe with Basil Leaves?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French"
+            ],
+            "category": null,
+            "ingredients": [
+                "BasilLeaves"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Basil Leaves"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Basil Leaves?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BasilLeaves"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "French"
+            ],
+            "category": []
+        },
+        "question": "What's a popular French dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "French",
+                "British"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from French or British cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "French",
+                "British"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Red Onion?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedOnion"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Beef",
+                "Dill Pickles"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Beef and Dill Pickles?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Beef",
+                "DillPickles"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "American"
+            ],
+            "category": []
+        },
+        "question": "Show me a American dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Red Onion?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedOnion"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Beef",
+                "Dill Pickles"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Beef and Dill Pickles?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Beef",
+                "DillPickles"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion"
+            ],
+            "nationality": [],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "Suggest a Pasta recipe with Red Onion as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pasta"
+            ],
+            "ingredients": [
+                "RedOnion"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "American"
+            ],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "What's a good Pasta recipe for American cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American"
+            ],
+            "category": [
+                "pasta"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "American"
+            ],
+            "category": []
+        },
+        "question": "What's a classic American recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Pasta"
+            ]
+        },
+        "question": "What Pasta recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "pasta"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion"
+            ],
+            "nationality": [
+                "American"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional American recipe with Red Onion?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American"
+            ],
+            "category": null,
+            "ingredients": [
+                "RedOnion"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Onion"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Red Onion?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedOnion"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "American"
+            ],
+            "category": []
+        },
+        "question": "What's a popular American dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "American",
+                "Turkish"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from American or Turkish cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "American",
+                "Turkish"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Chilli Flakes"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Red Chilli Flakes?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedChilliFlakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Vegetable Oil",
+                "Chicken Thighs"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Vegetable Oil and Chicken Thighs?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "VegetableOil",
+                "ChickenThighs"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Indian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Chilli Flakes"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Red Chilli Flakes?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedChilliFlakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Vegetable Oil",
+                "Chicken Thighs"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Vegetable Oil and Chicken Thighs?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "VegetableOil",
+                "ChickenThighs"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Chilli Flakes"
+            ],
+            "nationality": [],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "Suggest a Seafood recipe with Red Chilli Flakes as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Seafood"
+            ],
+            "ingredients": [
+                "RedChilliFlakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "What's a good Seafood recipe for Indian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": [
+                "Seafood"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Indian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Seafood"
+            ]
+        },
+        "question": "What Seafood recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Seafood"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Chilli Flakes"
+            ],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Indian recipe with Red Chilli Flakes?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": [
+                "RedChilliFlakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Red Chilli Flakes"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Red Chilli Flakes?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "RedChilliFlakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Indian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Indian",
+                "Indian"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Indian or Indian cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Indian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "double cream"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with double cream?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "doublecream"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Baguette",
+                "Sugar"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Baguette and Sugar?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Baguette",
+                "Sugar"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Canadian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "double cream"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include double cream?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "doublecream"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Baguette",
+                "Sugar"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Baguette and Sugar?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "Baguette",
+                "Sugar"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "double cream"
+            ],
+            "nationality": [],
+            "category": [
+                "Dessert"
+            ]
+        },
+        "question": "Suggest a Dessert recipe with double cream as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Dessert"
+            ],
+            "ingredients": [
+                "doublecream"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": [
+                "Dessert"
+            ]
+        },
+        "question": "What's a good Dessert recipe for Canadian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": [
+                "Dessert"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Canadian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Dessert"
+            ]
+        },
+        "question": "What Dessert recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "dessert"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "double cream"
+            ],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Canadian recipe with double cream?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": [
+                "doublecream"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "double cream"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using double cream?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "doublecream"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Canadian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Canadian",
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Canadian or Canadian cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Broad Beans"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook with Broad Beans?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BroadBeans"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Filo Pastry",
+                "Pepper"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can you suggest a recipe with Filo Pastry and Pepper?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "FiloPastry",
+                "Pepper"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "Show me a Egyptian dish I can prepare.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Broad Beans"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What are some recipes that include Broad Beans?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BroadBeans"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Filo Pastry",
+                "Pepper"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "Can I make something with Filo Pastry and Pepper?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "FiloPastry",
+                "Pepper"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Broad Beans"
+            ],
+            "nationality": [],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "Suggest a Miscellaneous recipe with Broad Beans as ingredient.",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": [
+                "BroadBeans"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "What's a good Miscellaneous recipe for Egyptian cuisine?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "What's a classic Egyptian recipe?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [],
+            "category": [
+                "Miscellaneous"
+            ]
+        },
+        "question": "What Miscellaneous recipes do you have?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": [
+                "Miscellaneous"
+            ],
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Broad Beans"
+            ],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "Do you have a traditional Egyptian recipe with Broad Beans?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": [
+                "BroadBeans"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [
+                "Broad Beans"
+            ],
+            "nationality": [],
+            "category": []
+        },
+        "question": "What can I cook for breakfast using Broad Beans?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": null,
+            "category": null,
+            "ingredients": [
+                "BroadBeans"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": []
+        },
+        "question": "What's a popular Egyptian dish I can cook?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    },
+    {
+        "intent": [
+            "recipe_recommendation"
+        ],
+        "slots": {
+            "ingredients": [],
+            "nationality": [
+                "Egyptian",
+                "Canadian"
+            ],
+            "category": []
+        },
+        "question": "Can you suggest a recipe comes from Egyptian or Canadian cuisines?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "nationality": [
+                "Egyptian",
+                "Canadian"
+            ],
+            "category": null,
+            "ingredients": null
+        }
+    }
+]
