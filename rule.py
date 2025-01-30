@@ -12,7 +12,6 @@ class InListRuleFromString(Rule):
         for val in self.allowed_values.split(","):
             if val in value:
                 return True
-
 class InListRule(Rule):
     """Rule to validate if a value is in a predefined list."""
     def __init__(self, allowed_values):

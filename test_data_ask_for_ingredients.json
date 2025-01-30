@@ -1,0 +1,1382 @@
+[
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        },
+        "question": "What are the ingredients for Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        },
+        "question": "Can you list the ingredients for Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        },
+        "question": "What do I need to cook Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        },
+        "question": "What are the components of Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        },
+        "question": "What ingredients are used in Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes",
+                "Stamppot"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Pancakes and Stamppot?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes",
+                "Stamppot"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Pancakes",
+                "Stamppot"
+            ]
+        },
+        "question": "What are the ingredients for Pancakes and Stamppot?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Pancakes",
+                "Stamppot"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What are the ingredients for Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "Can you list the ingredients for Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What do I need to cook Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What are the components of Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What ingredients are used in Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka",
+                "Kapsalon"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Moussaka and Kapsalon?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka",
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka",
+                "Kapsalon"
+            ]
+        },
+        "question": "What are the ingredients for Moussaka and Kapsalon?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka",
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What are the ingredients for Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "Can you list the ingredients for Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What do I need to cook Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What are the components of Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What ingredients are used in Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Kedgeree"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Dal fry and Kedgeree?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Kedgeree"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Kedgeree"
+            ]
+        },
+        "question": "What are the ingredients for Dal fry and Kedgeree?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Kedgeree"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What are the ingredients for Flamiche?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "Can you list the ingredients for Flamiche?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What do I need to cook Flamiche?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What are the components of Flamiche?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What ingredients are used in Flamiche?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche",
+                "Pancakes"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Flamiche and Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche",
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche",
+                "Pancakes"
+            ]
+        },
+        "question": "What are the ingredients for Flamiche and Pancakes?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche",
+                "Pancakes"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        },
+        "question": "What are the ingredients for Big Mac?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        },
+        "question": "Can you list the ingredients for Big Mac?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        },
+        "question": "What do I need to cook Big Mac?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        },
+        "question": "What are the components of Big Mac?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        },
+        "question": "What ingredients are used in Big Mac?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac",
+                "Bistek"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Big Mac and Bistek?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac",
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Big Mac",
+                "Bistek"
+            ]
+        },
+        "question": "What are the ingredients for Big Mac and Bistek?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Big Mac",
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What are the ingredients for Poutine?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "Can you list the ingredients for Poutine?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What do I need to cook Poutine?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What are the components of Poutine?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What ingredients are used in Poutine?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine",
+                "Ribollita"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Poutine and Ribollita?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine",
+                "Ribollita"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine",
+                "Ribollita"
+            ]
+        },
+        "question": "What are the ingredients for Poutine and Ribollita?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine",
+                "Ribollita"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What are the ingredients for Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "Can you list the ingredients for Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What do I need to cook Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What are the components of Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What ingredients are used in Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Corba"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Lasagne and Corba?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Corba"
+            ]
+        },
+        "question": "What are the ingredients for Lasagne and Corba?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        },
+        "question": "What are the ingredients for Kumpir?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        },
+        "question": "Can you list the ingredients for Kumpir?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        },
+        "question": "What do I need to cook Kumpir?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        },
+        "question": "What are the components of Kumpir?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        },
+        "question": "What ingredients are used in Kumpir?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir",
+                "Wontons"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Kumpir and Wontons?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir",
+                "Wontons"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kumpir",
+                "Wontons"
+            ]
+        },
+        "question": "What are the ingredients for Kumpir and Wontons?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kumpir",
+                "Wontons"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What are the ingredients for Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "Can you list the ingredients for Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What do I need to cook Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What are the components of Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        },
+        "question": "What ingredients are used in Lasagne?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Moussaka"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Lasagne and Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Moussaka"
+            ]
+        },
+        "question": "What are the ingredients for Lasagne and Moussaka?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Lasagne",
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What are the ingredients for Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "Can you list the ingredients for Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What do I need to cook Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What are the components of Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        },
+        "question": "What ingredients are used in Dal fry?",
+        "detected_intent": [
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Eton Mess"
+            ]
+        },
+        "question": "Can you tell me ingredients for the Dal fry and Eton Mess?",
+        "detected_intent": [
+            "ask_for_ingredients",
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Eton Mess"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_ingredients"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Eton Mess"
+            ]
+        },
+        "question": "What are the ingredients for Dal fry and Eton Mess?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_ingredients"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Dal fry",
+                "Eton Mess"
+            ]
+        }
+    }
+]

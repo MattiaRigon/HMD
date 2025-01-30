@@ -29,7 +29,7 @@ PROMPTS = {
     1) **Intent Detection**:  
     - Identify all intents present in the user's input. The possible intents are:  
         - `recipe_recommendation`: The user is looking for a recipe suggestion; they do not know the recipe name but would like to search for one providing nationality, category, or ingredients.
-        - `ask_for_ingredients`: The user wants to know the ingredients of a recipe.  
+        - `ask_for_ingredients`: The user wants to know the ingredients of a recipe. Also if the user ask what he need to cook a recipe, is the same intent. 
         - `ask_for_procedure`: The user wants to know the procedure for a recipe.  
         - `ask_for_time`: The user wants to know how much time is needed for a recipe.  
         - `not_supported`: The user input does not match any of the above intents, and the request is not supported by the bot.  
@@ -87,8 +87,7 @@ PROMPTS = {
         "intents": ["ask_for_ingredients", "ask_for_procedure"]  
     }
     ```
-    """  
-    ,
+    """  ,
 
     "NLU_SLOTS_recipe_recommendation": """
     You are the slot extraction module for the `recipe_recommendation` intent in a recipe bot. Your task is to extract relevant slot values from the user input.

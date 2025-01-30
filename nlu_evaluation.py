@@ -1,13 +1,14 @@
 import json
 import random
-from data.database import get_all_areas, get_all_ingredients, get_all_categories
+from data.database import get_all_areas, get_all_ingredients, get_all_categories, get_all_recipe_names
 from pipeline import get_args, process_nlu, update_nlu_slots
 from recipe_state_tracker import RecipeStateTracker
 from utils import load_model
 from collections import Counter
 from typing import List, Dict
+from tqdm import tqdm
 
-TEMPLATES = [
+RECIPE_RECCOMENDATION_TEMPLATES = [
     "What can I cook with {ingredient}?",
     "Can you suggest a recipe with {ingredient1} and {ingredient2}?",
     "Show me a {nationality1} dish I can prepare.",
@@ -23,6 +24,32 @@ TEMPLATES = [
     "Can you suggest a recipe comes from {nationality1} or {nationality2} cuisines?",
 ]
 
+ASK_FOR_INGREDIENTS_TEMPLATES = [
+    "What are the ingredients for {recipe}?",
+    "Can you list the ingredients for {recipe}?",
+    "What do I need to cook {recipe}?",
+    "What are the components of {recipe}?",
+    "What ingredients are used in {recipe}?",
+    "Can you tell me ingredients for the {recipe} and {recipe2}?",
+    "What are the ingredients for {recipe} and {recipe2}?",
+]
+
+ASK_FOR_TIME_TEMPLATES = [
+    "How long does it take to cook {recipe}?",
+    "What's the cooking time for {recipe}?",
+    "How much time do I need to prepare {recipe}?",
+    "What's the total time for {recipe}?",
+    "How long does it take to make {recipe}?",
+]
+
+ASK_FOR_PROCEDURE_TEMPLATES = [
+    "How do I cook {recipe}?",
+    "Can you explain how to prepare {recipe}?",
+    "What are the steps to make {recipe}?",
+    "What's the procedure to cook {recipe}?",
+    "Can you tell me how to make {recipe}?",
+
+]
 
 def calculate_nlu_metrics(predictions: List[Dict]) -> Dict:
     """
@@ -123,7 +150,7 @@ def fill_template(template, slots):
         return f"Missing slot value for {e}"
 
 # Function to generate filled questions with slots and produce answers
-def generate_filled_questions(templates, all_ingredients, all_nationalities, all_categories, num_questions=10):
+def generate_filled_questions_recipe_recommendation(templates, all_ingredients, all_nationalities, all_categories, num_questions=10):
     all_questions = []
 
     for _ in range(num_questions):
@@ -168,50 +195,119 @@ def generate_filled_questions(templates, all_ingredients, all_nationalities, all
 
     return all_questions
 
+def generate_filled_question_recipe_name(templates, all_recipes, intent,num_questions=10):
+    all_questions = []
+
+    for _ in range(num_questions):
+        # Randomly select values for the slots
+        slots = {
+            "recipe": random.choice(all_recipes),
+            "recipe2": random.choice(all_recipes)
+        }
+
+        # Generate questions and populate the answer format
+        for template in templates:
+            question = fill_template(template, slots)
+            answer = {
+                "intent": [intent],
+                "slots": {
+                    "recipe_name": []
+                },
+                "question": question
+            }
+            if "{recipe}" in template:
+                answer["slots"]["recipe_name"] = [slots["recipe"]]
+            if "{recipe2}" in template:
+                answer["slots"]["recipe_name"] = [slots["recipe"], slots["recipe2"]]
+            
+            # Remove None values in the ingredients list
+            all_questions.append(answer)
+
+    return all_questions
+
 # Example usage
 if __name__ == "__main__":
-    all_ingredients = get_all_ingredients()  # Example: ["chicken", "tomatoes", "basil"]
-    all_nationalities = get_all_areas()  # Example: ["Italian", "Indian", "Mexican"]
-    all_categories = get_all_categories()  # Example: ["main course", "dessert", "soup"]
-
-    test_data_recipe_reccomendation = generate_filled_questions(TEMPLATES, all_ingredients, all_nationalities, all_categories, num_questions=10)
-
+    EVALUATE = ["ask_for_ingredients", "ask_for_time", "ask_for_procedure"]
     args = get_args()
     model, tokenizer = load_model(args)
     state_tracker = RecipeStateTracker()
+    TEMPLATES = {
+        "recipe_recommendation": RECIPE_RECCOMENDATION_TEMPLATES,
+        "ask_for_ingredients": ASK_FOR_INGREDIENTS_TEMPLATES,
+        "ask_for_time": ASK_FOR_TIME_TEMPLATES,
+        "ask_for_procedure": ASK_FOR_PROCEDURE_TEMPLATES
+    }
+        
+    if "recipe_recommendation" in EVALUATE:
+        # Evaluation of the nlu model on the recipe recommendation intent
+        all_ingredients = get_all_ingredients()  # Example: ["chicken", "tomatoes", "basil"]
+        all_nationalities = get_all_areas()  # Example: ["Italian", "Indian", "Mexican"]
+        all_categories = get_all_categories()  # Example: ["main course", "dessert", "soup"]
+
+        test_data_recipe_reccomendation = generate_filled_questions_recipe_recommendation(RECIPE_RECCOMENDATION_TEMPLATES, all_ingredients, all_nationalities, all_categories, num_questions=10)
+
+
+        compute_metrics = False
+        if compute_metrics:
+        # Print all generated answers
+            for item in test_data_recipe_reccomendation:
+                user_input = item["question"]
+                intents = process_nlu(user_input, state_tracker, [], model, tokenizer, args)
+                item["detected_intent"] = intents
+                nlu = {"intent": "recipe_recommendation", "slots": {}}
+                update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)  
+                if "nationality" not in nlu["slots"]:
+                    nlu["slots"]["nationality"] = []
+                if isinstance(nlu["slots"]["nationality"], str):
+                    nlu["slots"]["nationality"] =  nlu["slots"]["nationality"].replace(" ","").split(",")
+                if "category" not in nlu["slots"]:
+                    nlu["slots"]["category"] = []
+                if isinstance(nlu["slots"]["category"], str):
+                    nlu["slots"]["category"] =  nlu["slots"]["category"].replace(" ","").split(",")
+                if "ingredients" not in nlu["slots"]:
+                    nlu["slots"]["ingredients"] = []
+                if isinstance(nlu["slots"]["ingredients"], str):
+                    nlu["slots"]["ingredients"] =  nlu["slots"]["ingredients"].replace(" ","").split(",")
+                item["detected_slots"] = nlu["slots"]
+        else:
+            with open("test_data_recipe_reccomendation.json", "r") as f:
+                test_data_recipe_reccomendation = json.load(f)
+        # Calculate metrics
+        metrics = calculate_nlu_metrics(test_data_recipe_reccomendation)
+        #save metrics
+        with open("nlu_metrics_recipe_recommendation.json", "w") as f:
+            json.dump(metrics, f, indent=4)
+        # save test data recipe
+        with open("test_data_recipe_recommendation.json", "w") as f:
+            json.dump(test_data_recipe_reccomendation, f, indent=4)
+        print("Test data recipe reccomendation saved")
+
+    for intent in ["ask_for_ingredients", "ask_for_time", "ask_for_procedure"]:
+        if intent not in EVALUATE:
+            continue
+
+        all_recipes = get_all_recipe_names() 
+        test_data = generate_filled_question_recipe_name(TEMPLATES[intent], all_recipes, intent, num_questions=10)
+        compute_metrics = True
+        if compute_metrics:
+            # Print all generated answers
+            for item in tqdm(test_data, desc=f"Processing {intent}"):
+                user_input = item["question"]
+                intents = process_nlu(user_input, state_tracker, [], model, tokenizer, args)
+                item["detected_intent"] = intents
+                nlu = {"intent": intent, "slots": {}}
+                update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)  
+                if "recipe_name" not in nlu["slots"]:
+                    nlu["slots"]["recipe_name"] = []
+                if isinstance(nlu["slots"]["recipe_name"], str):
+                    nlu["slots"]["recipe_name"] =  nlu["slots"]["recipe_name"].replace(" ","").split(",")
+                item["detected_slots"] = nlu["slots"]
+        
+        metrics = calculate_nlu_metrics(test_data)
+        with open(f"nlu_metrics_{intent}.json", "w") as f:
+            json.dump(metrics, f, indent=4)
+        # save test data recipe
+        with open(f"test_data_{intent}.json", "w") as f:
+            json.dump(test_data, f, indent=4)
+        print(f"Test data {intent} saved")
     
-    compute_metrics = False
-    if compute_metrics:
-    # Print all generated answers
-        for item in test_data_recipe_reccomendation:
-            user_input = item["question"]
-            intents = process_nlu(user_input, state_tracker, [], model, tokenizer, args)
-            item["detected_intent"] = intents
-            nlu = {"intent": "recipe_recommendation", "slots": {}}
-            update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args)  
-            if "nationality" not in nlu["slots"]:
-                nlu["slots"]["nationality"] = []
-            if isinstance(nlu["slots"]["nationality"], str):
-                nlu["slots"]["nationality"] =  nlu["slots"]["nationality"].replace(" ","").split(",")
-            if "category" not in nlu["slots"]:
-                nlu["slots"]["category"] = []
-            if isinstance(nlu["slots"]["category"], str):
-                nlu["slots"]["category"] =  nlu["slots"]["category"].replace(" ","").split(",")
-            if "ingredients" not in nlu["slots"]:
-                nlu["slots"]["ingredients"] = []
-            if isinstance(nlu["slots"]["ingredients"], str):
-                nlu["slots"]["ingredients"] =  nlu["slots"]["ingredients"].replace(" ","").split(",")
-            item["detected_slots"] = nlu["slots"]
-    else:
-        with open("test_data_recipe_reccomendation.json", "r") as f:
-            test_data_recipe_reccomendation = json.load(f)
-    # Calculate metrics
-    metrics = calculate_nlu_metrics(test_data_recipe_reccomendation)
-    #save metrics
-    with open("nlu_metrics.json", "w") as f:
-        json.dump(metrics, f, indent=4)
-    # save test data recipe
-    with open("test_data_recipe_reccomendation.json", "w") as f:
-        json.dump(test_data_recipe_reccomendation, f, indent=4)
-    print("Test data recipe reccomendation saved")
-    pass

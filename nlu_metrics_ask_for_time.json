@@ -1,0 +1,22 @@
+{
+    "intent_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "counts": {
+            "tp": 50,
+            "fp": 0,
+            "fn": 0
+        }
+    },
+    "slot_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "counts": {
+            "tp": 50,
+            "fp": 0,
+            "fn": 0
+        }
+    }
+}

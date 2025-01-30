@@ -128,10 +128,10 @@ def main():
             nlg_input = nlgs
             prompt = PROMPTS["NLG_END"]
             nlg_output = generate_nlg_output(nlg_input, prompt, model, tokenizer, args)
-            print(f"NLG OUTPUT: {nlg_output}")
+            # print(f"NLG OUTPUT: {nlg_output}")
             historical_context.append(nlg_output)
         else:
-            print(f"NLG OUTPUT: {nlgs[0]}")
+            # print(f"NLG OUTPUT: {nlgs[0]}")
             historical_context.append(nlgs[0])
 
 def get_user_input(historical_context):
@@ -146,13 +146,13 @@ def process_nlu(user_input, state_tracker, historical_context, model, tokenizer,
     else:
         context = ""
     nlu_input = {"user_input": user_input,"historical_context": context}
-    print(f"NLU Input: {nlu_input}")
+    # print(f"NLU Input: {nlu_input}")
 
     nlu_text = args.chat_template.format(PROMPTS["NLU_INTENT"], nlu_input)
     tokenized_input = tokenizer(nlu_text, return_tensors="pt").to(model.device)
     nlu_output = generate(model, tokenized_input, tokenizer, args)
     nlu_output = extract_json_from_text(nlu_output)
-    print(f"NLU INTENT: {nlu_output}")
+    # print(f"NLU INTENT: {nlu_output}")
     if "intents" not in list(nlu_output.keys()):
         return ["not_supported"]
     if "not_supported" in nlu_output["intents"] and len(nlu_output["intents"]) > 1:
@@ -173,7 +173,7 @@ def update_nlu_slots(nlu, user_input, state_tracker, model, tokenizer, args):
     tokenized_input = tokenizer(nlu_text, return_tensors="pt").to(model.device)
     nlu_output = generate(model, tokenized_input, tokenizer, args)
     nlu_output = extract_json_from_text(nlu_output)
-    print(f"NLU SLOTS: {nlu_output}")
+    # print(f"NLU SLOTS: {nlu_output}")
     nlu["slots"] = nlu_output["slots"]
     
 
@@ -184,9 +184,9 @@ def generate_dm_input(nlu, state_tracker):
 
     if nlu["intent"] == "recipe_recommendation":
         slots = state_tracker.get_slots("recipe_recommendation")
-        print(f"Slots: {slots}")
+        # print(f"Slots: {slots}")
         filtered_recipes = filter_recipes(slots.get("nationality"), slots.get("category"), slots.get("ingredients"))
-        print(f"Meals: {filtered_recipes}")
+        # print(f"Meals: {filtered_recipes}")
         return {"matched_recipes": filtered_recipes, "state": state_tracker.to_dict()}, filtered_recipes, []
 
     elif nlu["intent"] in {"ask_for_ingredients", "ask_for_procedure", "ask_for_time"}:

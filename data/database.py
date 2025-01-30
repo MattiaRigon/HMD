@@ -96,6 +96,9 @@ def get_all_meals():
         db_data = json.load(db_file)
         return [Meal.from_dict(meal) for meal in db_data]
 
+def get_all_recipe_names():
+    return [meal.strMeal for meal in get_all_meals()]
+
 def get_meal_by_name(name: str):
     return [meal.to_dict() for meal in get_all_meals() if name.lower() in meal.strMeal.lower()]
 

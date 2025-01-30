@@ -1,0 +1,960 @@
+[
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        },
+        "question": "How do I cook Timbits?",
+        "detected_intent": [
+            "not_supported"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        },
+        "question": "Can you explain how to prepare Timbits?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        },
+        "question": "What are the steps to make Timbits?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        },
+        "question": "What's the procedure to cook Timbits?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        },
+        "question": "Can you tell me how to make Timbits?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Timbits"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "How do I cook Moussaka?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "Can you explain how to prepare Moussaka?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What are the steps to make Moussaka?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "What's the procedure to cook Moussaka?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        },
+        "question": "Can you tell me how to make Moussaka?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Moussaka"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        },
+        "question": "How do I cook Sushi?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        },
+        "question": "Can you explain how to prepare Sushi?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        },
+        "question": "What are the steps to make Sushi?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        },
+        "question": "What's the procedure to cook Sushi?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        },
+        "question": "Can you tell me how to make Sushi?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Sushi"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        },
+        "question": "How do I cook Kapsalon?",
+        "detected_intent": [
+            "recipe_recommendation"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        },
+        "question": "Can you explain how to prepare Kapsalon?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        },
+        "question": "What are the steps to make Kapsalon?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        },
+        "question": "What's the procedure to cook Kapsalon?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        },
+        "question": "Can you tell me how to make Kapsalon?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Kapsalon"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        },
+        "question": "How do I cook Bistek?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        },
+        "question": "Can you explain how to prepare Bistek?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        },
+        "question": "What are the steps to make Bistek?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        },
+        "question": "What's the procedure to cook Bistek?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        },
+        "question": "Can you tell me how to make Bistek?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Bistek"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        },
+        "question": "How do I cook Fish pie?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        },
+        "question": "Can you explain how to prepare Fish pie?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        },
+        "question": "What are the steps to make Fish pie?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        },
+        "question": "What's the procedure to cook Fish pie?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        },
+        "question": "Can you tell me how to make Fish pie?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Fish pie"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "How do I cook Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "Can you explain how to prepare Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What are the steps to make Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What's the procedure to cook Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "Can you tell me how to make Poutine?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "How do I cook Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "Can you explain how to prepare Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What are the steps to make Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "What's the procedure to cook Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        },
+        "question": "Can you tell me how to make Poutine?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Poutine"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "How do I cook Flamiche?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "Can you explain how to prepare Flamiche?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What are the steps to make Flamiche?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "What's the procedure to cook Flamiche?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        },
+        "question": "Can you tell me how to make Flamiche?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Flamiche"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        },
+        "question": "How do I cook Corba?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        },
+        "question": "Can you explain how to prepare Corba?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        },
+        "question": "What are the steps to make Corba?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        },
+        "question": "What's the procedure to cook Corba?",
+        "detected_intent": [
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        }
+    },
+    {
+        "intent": [
+            "ask_for_procedure"
+        ],
+        "slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        },
+        "question": "Can you tell me how to make Corba?",
+        "detected_intent": [
+            "recipe_recommendation",
+            "ask_for_procedure"
+        ],
+        "detected_slots": {
+            "recipe_name": [
+                "Corba"
+            ]
+        }
+    }
+]
