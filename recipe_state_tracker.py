@@ -42,6 +42,10 @@ class Intent:
             "slots": self.slots
         }
 
+    def reset(self):
+        self.slots = {}
+        return self.slots
+
 class RecipeStateTracker:
     def __init__(self):
         self.selected_recipe = None
@@ -52,6 +56,7 @@ class RecipeStateTracker:
             "ask_for_time": AskForTime(),
             "not_supported": Intent(),
             "end_conversation": Intent(),
+            "ask_for_recipe_list": AskForRecipeList(),
         }   
         
         self.slots = {}
@@ -65,11 +70,20 @@ class RecipeStateTracker:
             self.values_allowed_slots[intent] = self.intents[intent].get_available_slots()
 
     def update(self, nlu_data):
+
+
         if 'intent' in nlu_data.keys():
             valid_intent = self.__update_intent(nlu_data['intent'])
             if valid_intent:
                 if 'slots' in nlu_data.keys():
                     self.__update_slots(nlu_data['slots'], nlu_data['intent'])
+
+    def reset(self, intents):
+        for intent in self.intents.keys():
+            if intent not in intents:
+                self.intents[intent].active = False
+                self.intents[intent].slots = {}
+                self.slots[intent] = self.intents[intent].reset()
 
     def __update_intent(self, intent :str) -> bool:
         if intent in self.intents.keys():
@@ -117,6 +131,16 @@ class RecipeStateTracker:
     def to_string(self):
         return json.dumps(self.to_dict(), indent=4)
     
+class AskForRecipeList(Intent):
+    def __init__(self):
+        super().__init__()
+        self.intent = "ask_for_recipe_list"
+        self.slots = {}
+    
+    def reset(self):
+        self.slots = {}
+        return self.slots
+    
 class AskForTime(Intent):
     def __init__(self):
         super().__init__()
@@ -127,7 +151,11 @@ class AskForTime(Intent):
         self.values_allowed_slots = {
             "recipe_name": IsStringRule(),
         }
-    
+    def reset(self):
+        self.slots = {
+            "recipe_name": None,
+        }
+        return self.slots
 class RecipeRaccomandation(Intent):
     def __init__(self):
         super().__init__()
@@ -152,6 +180,14 @@ class RecipeRaccomandation(Intent):
             "ingredients": InListRule(all_ingredients),
             "category": InListRule(all_categories),
         }
+    
+    def reset(self):
+        self.slots = {
+            "nationality": None,
+            "category": None,
+            "ingredients": None,
+        }
+        return self.slots
 
 class AskForIngredients(Intent):
     def __init__(self):
@@ -163,6 +199,12 @@ class AskForIngredients(Intent):
         self.values_allowed_slots = {
             "recipe_name": IsStringRule(),
         }
+    
+    def reset(self):
+        self.slots = {
+            "recipe_name": None,
+        }
+        return self.slots
 
 class NotSupported(Intent):
     def __init__(self):
@@ -170,6 +212,7 @@ class NotSupported(Intent):
         self.intent = "not_supported"
         self.slots = {}
         self.values_allowed_slots = {}
+    
 
 class AskForProcedure(Intent):
     def __init__(self):
@@ -181,4 +224,8 @@ class AskForProcedure(Intent):
         self.values_allowed_slots = {
             "recipe_name": IsStringRule(),
         }
-
+    def reset(self):
+        self.slots = {
+            "recipe_name": None,
+        }
+        return self.slots

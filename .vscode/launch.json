@@ -28,6 +28,14 @@
             "program": "${workspaceFolder}/nlu_evaluation.py",
             "args": ["llama3"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "DM evaluation",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/dm_evaluation.py",
+            "args": ["llama3"],
+            "console": "integratedTerminal"
         }
     ]
 }
