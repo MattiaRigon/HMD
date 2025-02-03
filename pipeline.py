@@ -127,7 +127,7 @@ def main():
                 state_tracker.update(nlu)
                 
                 dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
-                dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args)
+                dm_output = generate_dm_output(nlu, dm_input, state_tracker, recipe_information, model, tokenizer, args)
                 # print(f"DM: {dm_output['action_required'][0]}")
                 
                 nlg_input, prompt = prepare_nlg_input(nlu, state_tracker, dm_output, filtered_recipes, recipe_information)
@@ -234,7 +234,7 @@ def generate_dm_input(nlu, state_tracker):
     return {"state": state_tracker.to_dict()}, [], []
 
 
-def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args, deterministic = True, one_prompt = False):
+def generate_dm_output(nlu, dm_input, state_tracker, recipe_information, model, tokenizer, args, deterministic = True, one_prompt = False):
     if one_prompt:
         dm_text = args.chat_template.format(PROMPTS[f"DM"], json.dumps(dm_input, indent=4))
         tokenized_input = tokenizer(dm_text, return_tensors="pt").to(model.device)
@@ -255,8 +255,12 @@ def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, mode
 
     elif deterministic:
         if nlu["intent"] == "ask_for_ingredients":
-            if recipe_information is None:
-                return {"action_required": ["ask to the user to provide recipe name for which wants the ingredients"]}
+            if not recipe_information:
+                if nlu["slots"]["recipe_name"]:
+                    state_tracker.intents["ask_for_ingredients"].slots["recipe_name"] = []
+                    return {"action_required": ["tell to the user that the recipe name provided is not present in the database"]}
+                else:
+                    return {"action_required": ["ask to the user to provide recipe name for which wants the ingredients"]}
             else:
                 return {"action_required": ["provide list of ingredients"]}
             
@@ -264,14 +268,22 @@ def generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, mode
             return {"action_required": ["provide list of recipes"]}
 
         elif nlu["intent"] == "ask_for_procedure":
-            if recipe_information is None:
-                return {"action_required": ["ask to the user to provide recipe name for which wants know the procedure"]}
+            if not recipe_information :
+                if nlu["slots"]["recipe_name"]:
+                    state_tracker.intents["ask_for_ingredients"].slots["recipe_name"] = []
+                    return {"action_required": ["tell to the user that the recipe name provided is not present in the database"]}
+                else:
+                    return {"action_required": ["ask to the user to provide recipe name for which wants know the procedure"]}
             else:
                 return {"action_required": ["provide procedure of the recipe"]}
 
         elif nlu["intent"] == "ask_for_time":
-            if recipe_information is None:
-                return {"action_required": ["ask to the user to provide recipe name for which wants know how much time is needed in order to do the recipe"]}
+            if not recipe_information :
+                if nlu["slots"]["recipe_name"]:
+                    state_tracker.intents["ask_for_ingredients"].slots["recipe_name"] = []
+                    return {"action_required": ["tell to the user that the recipe name provided is not present in the database"]}
+                else:
+                    return {"action_required": ["ask to the user to provide recipe name for which wants know how much time is needed in order to do the recipe"]}
             else:
                 return {"action_required": ["provide the time needed for the recipe"]}
     else:

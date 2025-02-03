@@ -383,8 +383,11 @@ PROMPTS = {
       - The recipe name and all the information avaiable from that reciope.
     Instructions:
     - Provide the answer to the user's request which is inside the field `action_required` from the DM dictionary.
+    - If the dm told that the recipe is not found, you should tell to the user that the recipe is not found.
     - Example output:
         "In order to cook the lasagna you need tomato, onion, garlic, and pasta. Do you want to know how to proceed with the recipe?"
+    - Example output:
+        "I'm sorry, I couldn't find the recipe you are looking for. Could you please provide another recipe name?"
     Remember to be kind and engaging with the user.
     ** REPLY JUST WITH THE RESPONSE FOR THE USER, AVOID EXLPANATIONS OR OTHER TEXT LIKE HERE A POTENTIAL RESPONSE.**
     DON'T START WITH HERE THERE IS THE RESPONSE FOR THE USER; JUST START WITH THE RESPONSE.
