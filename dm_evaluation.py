@@ -30,8 +30,10 @@ if __name__ == "__main__":
     start_time = time.time()
     test_data = []
     predictions = []
+    deterministic = False
+    one_prompt = True
 
-    for intent in ["ask_for_ingredients", "ask_for_procedure", "ask_for_time"]:
+    for intent in ["recipe_recommendation","ask_for_ingredients", "ask_for_procedure", "ask_for_time"]:
         for _ in range(20):
             state_tracker = RecipeStateTracker()
 
@@ -67,7 +69,7 @@ if __name__ == "__main__":
             state_tracker.update(nlu)
             dm_input, filtered_recipes, recipe_information = generate_dm_input(nlu, state_tracker)
 
-            dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args, False, True)
+            dm_output = generate_dm_output(nlu, dm_input, filtered_recipes, recipe_information, model, tokenizer, args, deterministic, one_prompt)
 
             if intent == "recipe_recommendation":
                 actions = []

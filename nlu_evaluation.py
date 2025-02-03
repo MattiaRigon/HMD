@@ -227,7 +227,7 @@ def generate_filled_question_recipe_name(templates, all_recipes, intent,num_ques
 
 # Example usage
 if __name__ == "__main__":
-    EVALUATE = ["ask_for_ingredients", "ask_for_time", "ask_for_procedure"]
+    EVALUATE = ["recipe_recommendation","ask_for_ingredients", "ask_for_time", "ask_for_procedure"]
     args = get_args()
     model, tokenizer = load_model(args)
     state_tracker = RecipeStateTracker()
